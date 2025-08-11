@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="./src/css/utils.css">
     <link rel="stylesheet" href="./src/css/style.css">
     <link rel="stylesheet" href="./src/css/responsive.css">
-     <link rel="stylesheet" href="./src/css/about.css">
+    <link rel="stylesheet" href="./src/css/about.css">
+    <link rel="stylesheet" href="./src/css/newsletter.css">
 </head>
 <body id="main-body" class="overflow-x-hidden">
     <!-- Reused Navbar from index.html -->
@@ -199,11 +200,54 @@
     <button id="scrollTopBtn" title="Back to Top">↑</button>
 
 
+    <!-- Newsletter Subscription Popup -->
+    <div id="newsletter-popup" class="newsletter-popup">
+        <div class="newsletter-content">
+            <button class="newsletter-close" onclick="closeNewsletterPopup()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="newsletter-header">
+                <div class="newsletter-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h2>Subscribe to our Newsletter!</h2>
+                <p>Stay updated with the latest tech trends, courses, and opportunities!</p>
+            </div>
+            <form id="newsletter-form" class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+                <div class="input-group">
+                    <input type="email" id="newsletter-email" placeholder="Enter your email address" required>
+                    <button type="submit" class="subscribe-btn">
+                        <span>Subscribe</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 2L11 13M22 2L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div id="newsletter-message" class="newsletter-message"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Newsletter Trigger Button -->
+    <button id="newsletter-trigger" class="newsletter-trigger" onclick="showNewsletterPopup()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Newsletter</span>
+    </button>
+
     <!-- Shared JavaScript Files -->
     <script src="./src/js/navbar.js"></script>
     <script src="./src/js/utils.js"></script>
     <script src="./src/js/slider.js"></script>
     <script src="./src/js/scrollToTop.js"></script>
+    <script src="./src/js/newsletter.js"></script>
 </body>
 
 </html>
