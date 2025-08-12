@@ -49,8 +49,20 @@
   <a href="campus-ambassador.html">Campus Ambassador</a>
   <a href="blog.html">Blog</a>
   <a href="bookmarked.html">BookMarks</a>
-  <a href="./login.html" class="btn login">Log In</a>
-  <a href="./signup.html" class="btn signup">Sign Up</a>
+   <!-- Navbar -->
+      <div id="authSection">
+        <a href="./login.html" class="btn login">Log In</a>
+        <a href="./signup.html" class="btn signup">Sign Up</a>
+      </div>
+
+      <div id="userSection" style="display: none; align-items: center; gap: 10px;">
+        <button id="logoutBtn" class="btn login">Logout</button>
+        <a href="profile.html" title="Your Profile">
+          <img id="profileImg" src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Profile" width="30"
+            style="border-radius: 50%;" />
+        </a>
+      </div>
+
     </div>
     <div class="nav-toggle align-items-center justify-content-center" onclick="toggleNav()">
       <svg viewBox="0 0 18 18" id="navbar-barger-logo" class="">
@@ -409,6 +421,7 @@
 }
 
 </script>
+<script src="./src/js/auth.js"></script>
 
 
   </body>
