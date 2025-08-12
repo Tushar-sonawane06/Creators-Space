@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="./src/js/firebase.js" defer type="module"></script>
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -15,38 +16,43 @@
       box-sizing: border-box;
       font-family: 'Segoe UI', sans-serif;
     }
+
     body {
       background: white;
-/*       display: flex; */
+      /*       display: flex; */
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-/*       padding: 20px; */
+      /*       padding: 20px; */
     }
+
     .container {
       background: white;
       padding: 2rem;
       border-radius: 12px;
       width: 100%;
       max-width: 400px;
-      box-shadow: 0 8px 150px rgba(0,0,0,0.15);
+      box-shadow: 0 8px 150px rgba(0, 0, 0, 0.15);
       border: 1px solid #ccc;
       font-weight: 500;
-}
+    }
 
-    
+
     h2 {
       text-align: center;
       margin-bottom: 1rem;
     }
+
     .form-group {
       margin-bottom: 1rem;
       position: relative;
     }
+
     label {
       display: block;
       margin-bottom: 5px;
     }
+
     input[type="email"],
     input[type="password"],
     input[type="text"] {
@@ -56,6 +62,7 @@
       border: 1px solid #ccc;
       border-radius: 6px;
     }
+
     .toggle-password {
       position: absolute;
       right: 10px;
@@ -63,11 +70,13 @@
       cursor: pointer;
       color: #555;
     }
+
     .inline-feedback {
       font-size: 0.85rem;
       color: red;
       margin-top: 5px;
     }
+
     .checkbox-group {
       display: flex;
       align-items: center;
@@ -75,6 +84,7 @@
       font-size: 0.9rem;
       margin-bottom: 1rem;
     }
+
     .forgot-password {
       display: block;
       text-align: right;
@@ -83,7 +93,9 @@
       color: black;
       text-decoration: none;
     }
-    .signup-page{ display: block;
+
+    .signup-page {
+      display: block;
       text-align: center;
       margin-bottom: 1rem;
       font-size: 0.9rem;
@@ -91,6 +103,7 @@
       text-decoration: none;
 
     }
+
     .btn {
       width: 100%;
       padding: 10px;
@@ -101,9 +114,11 @@
       font-weight: bold;
       cursor: pointer;
     }
+
     .btn:disabled {
       background-color: #999;
     }
+
     .spinner {
       display: none;
       width: 24px;
@@ -121,14 +136,16 @@
       display: flex;
       align-items: center;
       text-align: center;
-      margin: 20px 0; /* spacing between login and google button */
+      margin: 20px 0;
+      /* spacing between login and google button */
     }
 
     .divider::before,
     .divider::after {
       content: '';
       flex: 1;
-      border-bottom: 1px solid #ccc; /* gray line */
+      border-bottom: 1px solid #ccc;
+      /* gray line */
     }
 
     .divider:not(:empty)::before {
@@ -147,41 +164,45 @@
 
     /* Google Button */
     .google-btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        width: 100%; 
-        background-color: white !important; 
-        color: #3c4043 !important; 
-        border: 1px solid #dadce0;
-        border-radius: 7px !important;
-        padding: 10px;
-        font-size: 14px;
-        font-weight: 500;
-        cursor: pointer;
-        box-shadow: 0 5px 5px rgba(0,0,0,0.1);
-        transition: background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      background-color: white !important;
+      color: #3c4043 !important;
+      border: 1px solid #dadce0;
+      border-radius: 7px !important;
+      padding: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
     }
 
 
     .google-btn:hover {
-        background-color: #f7f8f8;
+      background-color: #f7f8f8;
     }
 
     .google-icon {
-        width: 20px;
-        height: 20px; 
+      width: 20px;
+      height: 20px;
     }
 
     @keyframes spin {
-      to { transform: rotate(360deg); }
+      to {
+        transform: rotate(360deg);
+      }
     }
+
     .social-buttons {
       display: flex;
       gap: 10px;
       margin-top: 1rem;
     }
+
     .social-btn {
       flex: 1;
       padding: 8px;
@@ -193,10 +214,11 @@
     }
   </style>
 </head>
+
 <body>
   <div class="navbar">
     <h1><a href="./">
-      <img id="navbar-logo" width="80px" src="./assets/images/logo-nav-light.png" alt="logo Creators-Space">
+        <img id="navbar-logo" width="80px" src="./assets/images/logo-nav-light.png" alt="logo Creators-Space">
         <br>Creators-Space</a></h1>
     <div class="nav-links align-items-center">
       <a href="index.html">Home</a>
@@ -227,9 +249,10 @@
       </svg>
     </div>
   </div>
-<br><br>
+  <br><br>
   <div class="container">
-        <a href="index.html" style="display: inline-block; margin-bottom: 10px; font-size: 14px; color: #555; text-decoration: none;">
+    <a href="index.html"
+      style="display: inline-block; margin-bottom: 10px; font-size: 14px; color: #555; text-decoration: none;">
       ← Back to Homepage
     </a>
     <h2>Login</h2>
@@ -262,78 +285,103 @@
 
       <div class="input">
         <button id="google-login-btn" class="google-btn">
-            <span class="google-logo">
-              <svg class="google-icon" viewBox="0 0 533.5 544.3">
-                <path fill="#4285F4" d="M533.5 278.4c0-18.5-1.6-37.1-5-55.2H272v104.5h146.9c-6.4 34.7-25.7 64.1-54.9 83.5l89 69.4c52-47.8 80.5-118.3 80.5-202.2z"/>
-                <path fill="#34A853" d="M272 544.3c73.6 0 135.4-24.3 180.5-65.9l-89-69.4c-24.7 16.6-56.4 26.2-91.5 26.2-70.4 0-130-47.6-151.3-111.5l-93.6 72.3c43.3 85.1 132.1 147.3 244.9 147.3z"/>
-                <path fill="#FBBC04" d="M120.7 323.7c-10.4-30.7-10.4-63.6 0-94.3L27 157c-40.7 79.7-40.7 172 0 251.7l93.7-72.3z"/>
-                <path fill="#EA4335" d="M272 107.7c38.6-.6 75.5 13.6 104 39.4l77.7-77.7C403.2 23.9 340.2-.2 272 0 159.2 0 70.5 62.2 27.2 147.3l93.6 72.4c21.4-63.9 81-111.5 151.2-112z"/>
-              </svg>
-              </span>
-            <span>Sign in with Google</span>
+          <span class="google-logo">
+            <svg class="google-icon" viewBox="0 0 533.5 544.3">
+              <path fill="#4285F4"
+                d="M533.5 278.4c0-18.5-1.6-37.1-5-55.2H272v104.5h146.9c-6.4 34.7-25.7 64.1-54.9 83.5l89 69.4c52-47.8 80.5-118.3 80.5-202.2z" />
+              <path fill="#34A853"
+                d="M272 544.3c73.6 0 135.4-24.3 180.5-65.9l-89-69.4c-24.7 16.6-56.4 26.2-91.5 26.2-70.4 0-130-47.6-151.3-111.5l-93.6 72.3c43.3 85.1 132.1 147.3 244.9 147.3z" />
+              <path fill="#FBBC04"
+                d="M120.7 323.7c-10.4-30.7-10.4-63.6 0-94.3L27 157c-40.7 79.7-40.7 172 0 251.7l93.7-72.3z" />
+              <path fill="#EA4335"
+                d="M272 107.7c38.6-.6 75.5 13.6 104 39.4l77.7-77.7C403.2 23.9 340.2-.2 272 0 159.2 0 70.5 62.2 27.2 147.3l93.6 72.4c21.4-63.9 81-111.5 151.2-112z" />
+            </svg>
+          </span>
+          <span>Sign in with Google</span>
         </button>
 
 
-      <div class="signup-page">
-      <p>Don't have an account? <a href="signup.html"> Sign up</a></p>
-      </div>
+        <div class="signup-page">
+          <p>Don't have an account? <a href="signup.html"> Sign up</a></p>
+        </div>
 
-      <div class="social-buttons">
-        <div class="social-btn">🔵 Instagram</div>
-        <div class="social-btn">⚫ Twitter</div>
-      </div>
+        <div class="social-buttons">
+          <div class="social-btn">🔵 Instagram</div>
+          <div class="social-btn">⚫ Twitter</div>
+        </div>
     </form>
   </div>
 
   <script>
-  function togglePassword(id) {
-    const input = document.getElementById(id);
-    input.type = input.type === "password" ? "text" : "password";
-  }
+    function togglePassword(id) {
+      const input = document.getElementById(id);
+      input.type = input.type === "password" ? "text" : "password";
+    }
 
-  const form = document.getElementById("Login-form");
-  const email = document.getElementById("email");
-  const password = document.getElementById("password");
-  const emailFeedback = document.getElementById("emailFeedback");
-  const spinner = document.getElementById("spinner");
+    const form = document.getElementById("Login-form");
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    const emailFeedback = document.getElementById("emailFeedback");
+    const spinner = document.getElementById("spinner");
 
-  // Validate email format live
-  email.addEventListener("input", () => {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    emailFeedback.textContent = regex.test(email.value)
-      ? ""
-      : "Enter a valid email address";
-  });
+    // Live email validation
+    email.addEventListener("input", () => {
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      emailFeedback.textContent = regex.test(email.value)
+        ? ""
+        : "Enter a valid email address";
+    });
 
-  // Login form submit
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-    spinner.style.display = "block";
-
-    setTimeout(() => {
-      spinner.style.display = "none";
-
-      // Get stored credentials from localStorage
-      const storedEmail = localStorage.getItem("email");
-      const storedPassword = localStorage.getItem("password");
-
-      if (
-        email.value === storedEmail &&
-        password.value === storedPassword
-      ) {
-        alert("Login successful!");
-        window.location.href = "index.html"; // Redirect
-      } else {
-        alert("Invalid email or password.");
+      // Final email format check before login
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email.value)) {
+        alert("Please enter a valid email.");
+        return;
       }
 
-      form.reset();
-    }, 2000);
-  });
-</script>
-<script src="./src/js/navbar.js"></script>
-<script src="./src/js/utils.js"></script>
+      spinner.style.display = "block";
+
+      // Simulate server check delay
+      setTimeout(() => {
+        spinner.style.display = "none";
+
+        const storedEmail = localStorage.getItem("email");
+        const storedPassword = localStorage.getItem("password");
+        const storedUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+        if (email.value === storedEmail && password.value === storedPassword) {
+          // If user profile missing, create minimal one
+          if (!storedUser) {
+            localStorage.setItem("loggedInUser", JSON.stringify({
+              name: email.value.split("@")[0],
+              email: storedEmail,
+              skills: [],
+              courses: [],
+              certificates: [],
+              profileImage: ""
+            }));
+          }
+
+          localStorage.setItem("isLoggedIn", "true");
+
+          alert("Login successful!");
+          if (localStorage.getItem("isLoggedIn") === "true") {
+            window.location.href = "index.html";
+          }
+
+        } else {
+          alert("Invalid email or password.");
+        }
+
+      }, 1000);
+    });
+
+  </script>
+  <script src="./src/js/navbar.js"></script>
+  <script src="./src/js/utils.js"></script>
 </body>
+
 </html>
-  
