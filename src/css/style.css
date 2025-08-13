@@ -591,6 +591,13 @@ body.dark #our-course-h1:hover {
   transform: scale(1.1);
   top: 0;
 }
+.dark #scrollTopBtn{
+  background-color: white;
+  
+}
+.dark #scrollTopBtn svg {
+  fill: #0a0a0a; /* arrow color for dark mode */
+}
 
 /* bounce animation added to back to top */
 @keyframes bounce {
