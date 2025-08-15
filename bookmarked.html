@@ -11,27 +11,31 @@
   <link rel="stylesheet" href="./src/css/utils.css" /> 
   <link rel="stylesheet" href="./src/css/responsive.css" />
   <link rel="stylesheet" href="./src/css/courses.css" />
-  <!-- <link rel = "stylesheet" href = "./src/css/bookmarked.css"/> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<!-- <link rel = "stylesheet" href = "./src/css/bookmarked.css"/> -->
 
-  <script>
-    function toggleDarkMode() {
-      const element = document.getElementById("main-body");
-      element.classList.toggle("dark");
+<script>
+  function toggleDarkMode() {
+    const element = document.getElementById("main-body");
+    element.classList.toggle("dark");
 
-      if (element.classList.contains("dark")) {
-        localStorage.setItem("theme", "dark");
-      } else {
-        localStorage.setItem("theme", "light");
-      }
+    if (element.classList.contains("dark")) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
     }
+  }
 
-    // Apply saved theme on page load
-    if (localStorage.getItem("theme") === "dark") {
-      document.addEventListener("DOMContentLoaded", function () {
-        document.getElementById("main-body")?.classList.add("dark");
-      });
-    }
-  </script>
+  // Apply saved theme on page load
+  if (localStorage.getItem("theme") === "dark") {
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("main-body")?.classList.add("dark");
+    });
+  }
+</script>
 </head>
 
 <body id="main-body" class="overflow-x-hidden">
@@ -200,8 +204,10 @@
     </div>
     <div class="contact">
       <h3>Contact Us</h3>
-      <p>21brac0401@polygwalior.ac.in</p>
-      <p>+91 88xxxxxx89</p>
+      <p><a href="mailto:21brac0401@polygwalior.ac.in"><i class="fa-solid fa-envelope"
+            id="envelope-icon"></i>21brac0401@polygwalior.ac.in</a></p>
+            <br>
+     <p><a href="tel:+9188xxxxxx89"><i class="fa-solid fa-phone" id="call-icon"></i>+91 88xxxxxx89</a></p>
     </div>
     <div class="form">
       <h3>Get In Touch</h3>

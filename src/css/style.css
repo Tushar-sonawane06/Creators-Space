@@ -457,6 +457,10 @@ body.dark #our-course-h1:hover {
   color: white;
 }
 
+#envelope-icon, #call-icon {
+  margin-right: 10px;
+}
+
 .footer .form {
   display: flex;
   flex-direction: column;
