@@ -104,10 +104,7 @@
           <!-- Tech stack filters will be populated dynamically -->
         </div>
       </div>
-      <div class="view-toggle">
-        <button id="gridView" class="view-btn active">Grid</button>
-        <button id="listView" class="view-btn">List</button>
-      </div>
+      
     </div>
   </div>
 
@@ -118,6 +115,14 @@
       <p>Loading projects...</p>
     </div>
   </div>
+  <div class="show-more-container">
+        <button id="showMoreBtn" class="show-more-btn">
+          <span>Show More</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6,9 12,15 18,9"></polyline>
+          </svg>
+        </button>
+      </div>
 
   <!-- GITHUB API STATUS -->
   <div class="api-status" id="apiStatus">
@@ -129,6 +134,13 @@
       Last updated: <span id="lastUpdated">Just now</span>
     </div>
   </div>
+
+  <!-- Back to Top Button -->
+  <button id="backToTopBtn" class="back-to-top-btn" title="Back to Top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="18,15 12,9 6,15"></polyline>
+    </svg>
+  </button>
 
   <!-- Footer -->
   <footer class="footer">
