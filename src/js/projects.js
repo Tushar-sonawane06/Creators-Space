@@ -83,12 +83,17 @@ class ProjectsManager {
     const toggleTechFilters = document.getElementById('toggleTechFilters');
     const techStackFilters = document.getElementById('techStackFilters');
     
-    if (toggleTechFilters && techStackFilters) {
-      toggleTechFilters.addEventListener('click', () => {
-        techStackFilters.classList.toggle('collapsed');
-        toggleTechFilters.classList.toggle('collapsed');
-      });
-    }
+    // In the setupEventListeners() method, modify the tech stack filters toggle section:
+if (toggleTechFilters && techStackFilters) {
+  // Initialize as collapsed
+  techStackFilters.classList.add('collapsed');
+  toggleTechFilters.classList.add('collapsed');
+  
+  toggleTechFilters.addEventListener('click', () => {
+    techStackFilters.classList.toggle('collapsed');
+    toggleTechFilters.classList.toggle('collapsed');
+  });
+}
   }
 
   setupDarkMode() {
