@@ -290,7 +290,10 @@ body {
     border: none;
 }
 
-#main-body.dark .btn:hover,
+#main-body.dark button{
+  background-color: white;
+  
+}
 #main-body.dark button:hover {
     background-color: #444;
 }
