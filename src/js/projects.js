@@ -8,6 +8,10 @@ class ProjectsManager {
     this.activeFilters = new Set();
     this.searchQuery = '';
     this.isInitialLoad = true;
+    this.projectsPerRow = 3; // Assuming 3 projects per row in grid
+    this.initialRows = 2;
+    this.currentRows = this.initialRows;
+    this.maxRows = 10; // Maximum rows to show
     
     this.init();
   }
@@ -16,7 +20,14 @@ class ProjectsManager {
     this.setupEventListeners();
     this.setupDarkMode();
     await this.loadProjects();
+    this.filteredProjects = [...this.projects];
+    
+    // Set container to grid view by default
+    const container = document.getElementById('projectsContainer');
+    container.className = 'projects-container grid-view';
+    
     this.renderProjects();
+    this.updateShowMoreButton();
     this.updateLastUpdated();
     this.isInitialLoad = false;
   }
@@ -35,16 +46,28 @@ class ProjectsManager {
       this.filterProjects();
     });
 
-    // View toggle
-    const gridViewBtn = document.getElementById('gridView');
-    const listViewBtn = document.getElementById('listView');
+    // Show more button
+    const showMoreBtn = document.getElementById('showMoreBtn');
+    if (showMoreBtn) {
+      showMoreBtn.addEventListener('click', () => {
+        this.showMoreProjects();
+      });
+    }
 
-    gridViewBtn.addEventListener('click', () => {
-      this.setView('grid');
-    });
+    // Back to top button
+    const backToTopBtn = document.getElementById('backToTopBtn');
+    if (backToTopBtn) {
+      backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
 
-    listViewBtn.addEventListener('click', () => {
-      this.setView('list');
+    // Scroll event for back to top button
+    window.addEventListener('scroll', () => {
+      this.toggleBackToTopButton();
     });
 
     // Dark mode toggle
@@ -221,6 +244,7 @@ class ProjectsManager {
       });
     });
 
+
     const filterContainer = document.getElementById('techStackFilters');
     const sortedTechStacks = Array.from(techStacks).sort();
 
@@ -230,6 +254,7 @@ class ProjectsManager {
         <button class="tech-filter" data-tech="${tech}">${tech}</button>
       `).join('')}
     `;
+     this.activeFilters.clear();
 
     // Add event listeners to tech stack filters
     filterContainer.addEventListener('click', (e) => {
@@ -245,7 +270,7 @@ class ProjectsManager {
         // Filter projects
         if (tech === 'all') {
           this.activeFilters.clear();
-          this.filteredProjects = this.projects;
+          
         } else {
           this.activeFilters.clear();
           this.activeFilters.add(tech);
@@ -272,46 +297,73 @@ class ProjectsManager {
       return matchesSearch && matchesTechStack;
     });
 
+    // Reset to initial rows when filtering
+    this.currentRows = this.initialRows;
     this.renderProjects();
+    this.updateShowMoreButton();
   }
 
-  setView(view) {
-    this.currentView = view;
-    
-    // Update view buttons
-    document.getElementById('gridView').classList.toggle('active', view === 'grid');
-    document.getElementById('listView').classList.toggle('active', view === 'list');
-    
-    // Update container class
-    const container = document.getElementById('projectsContainer');
-    container.className = `projects-container ${view}-view`;
-    
+
+  showMoreProjects() {
+    this.currentRows++;
     this.renderProjects();
+    this.updateShowMoreButton();
+  }
+
+  toggleBackToTopButton() {
+    const backToTopBtn = document.getElementById('backToTopBtn');
+    if (backToTopBtn) {
+      if (window.pageYOffset > 300) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    }
+  }
+
+  updateShowMoreButton() {
+    const showMoreBtn = document.getElementById('showMoreBtn');
+    if (showMoreBtn) {
+      const maxProjects = this.projectsPerRow * this.maxRows;
+      const currentProjects = this.projectsPerRow * this.currentRows;
+      
+      if (currentProjects >= this.filteredProjects.length || currentProjects >= maxProjects) {
+        showMoreBtn.disabled = true;
+        showMoreBtn.innerHTML = '<span>No More Projects</span>';
+      } else {
+        showMoreBtn.disabled = false;
+        showMoreBtn.innerHTML = `
+          <span>Show More</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6,9 12,15 18,9"></polyline>
+          </svg>
+        `;
+      }
+    }
   }
 
   renderProjects() {
     const container = document.getElementById('projectsContainer');
     
     if (this.filteredProjects.length === 0) {
-      if (this.isInitialLoad) {
-        container.innerHTML = `
-          <div class="no-results">
-            <h3>Select Tech Stack</h3>
-            <p>Choose a technology from the filters above to view related projects.</p>
-          </div>
-        `;
-      } else {
-        container.innerHTML = `
-          <div class="no-results">
-            <h3>No projects found</h3>
-            <p>Try adjusting your search or filters to find more projects.</p>
-          </div>
-        `;
-      }
-      return;
-    }
+    container.innerHTML = `
+      <div class="no-results">
+        <h3>No projects found</h3>
+        <p>Try adjusting your search or filters to find more projects.</p>
+      </div>
+    `;
+    return;
+  }
+    // Calculate how many projects to show
+    const projectsToShow = Math.min(
+      this.projectsPerRow * this.currentRows,
+      this.filteredProjects.length
+    );
 
-    container.innerHTML = this.filteredProjects.map(project => 
+    // Get the projects to display
+    const projectsToDisplay = this.filteredProjects.slice(0, projectsToShow);
+
+    container.innerHTML = projectsToDisplay.map(project => 
       this.createProjectCard(project)
     ).join('');
   }
@@ -341,7 +393,7 @@ class ProjectsManager {
     ` : '';
 
     return `
-      <div class="project-card ${this.currentView === 'list' ? 'list-view' : ''}">
+      <div class="project-card">
         <div class="project-header">
           <div class="project-icon">
             ${project.name.charAt(0).toUpperCase()}
