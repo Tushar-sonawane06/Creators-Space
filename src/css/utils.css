@@ -89,6 +89,27 @@
   color: #6b7280;
 }
 
+.ff-times-new-roman {
+    font-family: Times, 'Times New Roman', serif;
+}
+
+.fs-small {
+    font-size: small;
+}
+
+.flex-col {
+ flex-direction: column;
+}
+
+.form-control {
+    width: 100% !important;
+    height: 30px;
+}
+
+.rounded {
+    border-radius: 5px;
+}
+
 /* Responsive text */
 @media (max-width: 768px) {
   .heading-xl {
