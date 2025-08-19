@@ -2,7 +2,6 @@
 
 <img src="./assets/images/logo.png" alt="Creators-Space Logo" height="100px" />
 
-
 Creators-Space is a modern tech-learning platform created to empower students and professionals through high-quality content and career-oriented resources.
 
 🔗 **Live Website:** [https://creators-space.netlify.app/](https://creators-space.netlify.app/)
@@ -17,31 +16,19 @@ We welcome and encourage contributions from participants and the entire open-sou
 
 > ⭐ If you're a GSSoC'25 contributor, check out our [CONTRIBUTING.md](./CONTRIBUTING.md) to get started!
 
-
 ---
-📌 Table of Contents
-🎯 Introduction
-
-✨ Features
-
-📁 Directory Structure
-
-🛠 Tech Stack
-
-🧠 System Architecture
-
-📸 Screenshots
-
-🚀 How to Use / Run
-
-🌐 Community & Support
-
-🤝 Contributing
-
-📄 License
-
-🌟 Acknowledgment
-
+📌 Table of Contents  
+🎯 Introduction  
+✨ Features  
+📁 Directory Structure  
+🛠 Tech Stack  
+🧠 System Architecture  
+📸 Screenshots  
+🚀 How to Use / Run  
+🌐 Community & Support  
+🤝 Contributing  
+📄 License  
+🌟 Acknowledgment  
 
 ---
 
@@ -51,15 +38,17 @@ Creators-Space provides an innovative and user-friendly environment for individu
 
 The platform includes features like:
 
-- **Home** - Landing page with hero section and course overview
-- **Courses** - Comprehensive learning paths and tutorials
-- **Services** - Career guidance, mentorship, and professional development
-- **Projects** - Open source projects and GitHub repositories categorized by tech stack
-- **Internship & Campus Ambassador Opportunities** - Real-world experience and leadership roles
-- **Blog** - Latest tech insights and tutorials
-- **Authentication** - Secure login and signup system
-- **Contact & Social Links** - Community engagement and support
+- **Home** - Landing page with hero section and course overview  
+- **Courses** - Comprehensive learning paths and tutorials  
+- **Services** - Career guidance, mentorship, and professional development  
+- **Projects** - Open source projects and GitHub repositories categorized by tech stack  
+- **Internship & Campus Ambassador Opportunities** - Real-world experience and leadership roles  
+- **Blog** - Latest tech insights and tutorials  
+- **Authentication** - Secure login and signup system  
+- **Contact & Social Links** - Community engagement and support  
+
 ---
+
 ## To run locally
 Clone the repository:
 
@@ -70,6 +59,7 @@ cd Creators-Space
 # Open in browser
 Open index.html in your preferred web browser
 ```
+
 ## 🔑 Firebase Configuration
 
 Update your Firebase SDK configuration in the file:
@@ -93,14 +83,9 @@ const firebaseConfig = {
 };
 ```
 
-<!--
-## 👨‍💻 Developer
+---
 
-**Anurag Vishwakarma**  
-🔗 [LinkedIn Profile](https://www.linkedin.com/in/anuragvishwakarma/)
--->
-
- # Project Admin⚡
+# Project Admin⚡
  
 <table>
 <tr>
@@ -110,7 +95,7 @@ const firebaseConfig = {
 </tr>
 </table>
 
- # Project Mentors⚡🧑‍💻
+# Project Mentors⚡🧑‍💻
  
 <table>
 <tr>
@@ -156,6 +141,7 @@ Creators-Space/
 ├── signup.html
 └── README.md
 ```
+
 ---
 
 ## 🛠 Tech Stack
@@ -171,34 +157,36 @@ Version Control: Git & GitHub
 
 ## 📸 Screenshots
 
+1. Home Page (Light Mode)  
+![Home Page(Light)](Screenshots/intro(light).png)
 
-1. Home Page (Light Mode)
-![Home Page(Light)](screenshots/intro(light).png)
+2. Home Page (Dark Mode)  
+![Home Page(Dark)](Screenshots/intro(dark).png)
 
-2.  Home Page (Dark Mode)
-![Home Page(Dark)](screenschots/intro(dark).png)
+3. Login Page  
+![Login Page](Screenshots/login.png)
 
-3. Login Page
-![Login Page](screenshots/login.png)
+4. Sign Up Page  
+![Sign Up Page](Screenshots/signup.png)
 
-4. Sign Up Page
-![Sign Up Page](screenshots/signup.png)
+5. Internship Page  
+![Internship Page](Screenshots/internship.png)
 
-5. Internship Page
-![Internship Page](screenshots/internship.png)
-
-6. Course Page
-![Course Page](screenshots/course.png)
+6. Course Page  
+![Course Page](Screenshots/course.png)
 
 ---
+
 ## 🌐 Community & Support
-💬 Join the GSSoC community discussions.
-🐛 Report bugs or request features via GitHub Issues.
+💬 Join the GSSoC community discussions.  
+🐛 Report bugs or request features via GitHub Issues.  
+👨🏻‍💻 **Follow us on GitHub:** [Creators-Space Official GitHub Page](https://github.com/Creators-Space/)  
+🔗 **Follow us on LinkedIn:** [Creators-Space Official Linkedin Page](https://linkedin.com/company/creators-space-org)  
 
 ---
 
 ## 🤝 Contributing
-We welcome contributions from the community!
+We welcome contributions from the community!  
 Please check out our CONTRIBUTING.md for guidelines.
 
 ---
