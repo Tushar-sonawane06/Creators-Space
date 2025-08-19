@@ -93,11 +93,40 @@ const firebaseConfig = {
 };
 ```
 
+<!--
 ## 👨‍💻 Developer
 
 **Anurag Vishwakarma**  
 🔗 [LinkedIn Profile](https://www.linkedin.com/in/anuragvishwakarma/)
+-->
 
+ # Project Admin⚡
+ 
+<table>
+<tr>
+<td align="center"><a href="https://github.com/vishanurag"><img src="https://avatars.githubusercontent.com/u/126074487?v=4" width=150px height=150px /></a></br> <h4 style="color:red;">Anurag Vishwakarma</h4>
+ <a href="https://www.linkedin.com/in/anuragvishwakarma/"><img src="https://img.icons8.com/fluency/2x/linkedin.png" width="32px" height="32px"></img></a>
+</td>
+</tr>
+</table>
+
+ # Project Mentors⚡🧑‍💻
+ 
+<table>
+<tr>
+<td align="center"><a href="https://github.com/anshiagrawal22"><img src="https://avatars.githubusercontent.com/u/147601739?v=4" width=150px height=150px /></a></br> <h4 style="color:red;">Anshi Agrawal</h4>
+ <a href="https://www.linkedin.com/in/anshiagrawal22/"><img src="https://img.icons8.com/fluency/2x/linkedin.png" width="32px" height="32px"></img></a>
+</td>
+<td></td>
+<td align="center"><a href="https://github.com/Rahma5983"><img src="https://avatars.githubusercontent.com/u/218832021?v=4" width=150px height=150px /></a></br> <h4 style="color:red;">Rahma Naqui</h4>
+ <a href="https://www.linkedin.com/in/rahma-naqui/"><img src="https://img.icons8.com/fluency/2x/linkedin.png" width="32px" height="32px"></img></a>
+</td>
+<td></td>
+<td align="center"><a href="https://github.com/Shivangi10-10"><img src="https://avatars.githubusercontent.com/u/107495159?v=4" width=150px height=150px /></a></br> <h4 style="color:red;">Shivangi Suyash</h4>
+ <a href="https://www.linkedin.com/in/shivangi-suyash-05a484259/"><img src="https://img.icons8.com/fluency/2x/linkedin.png" width="32px" height="32px"></img></a>
+</td>
+</tr>
+</table>
 
 ---
 
