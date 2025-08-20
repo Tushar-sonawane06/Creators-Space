@@ -177,11 +177,11 @@ We love contributions from the community! Here's how you can help:
 - Create a feature branch (git checkout -b feature/amazing-feature)
 - Commit your changes (git commit -m 'Add some amazing feature')
 - Push to the branch (git push origin feature/amazing-feature)
-- Open a Pull Request
+- Open a Pull Request<br>
 Please read our [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guidelines and our [CODE OF CONDUCT](./CODE_OF_CONDUCT.md)
 ---
 ## 📄 License
--This project is licensed under the MIT License - see the [LICENSE](./LICENSE) for details.
+- This project is licensed under the MIT License - see the [LICENSE](./LICENSE) for details.
 
 ---
 ## 👥 Team
