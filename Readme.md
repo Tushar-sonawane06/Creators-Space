@@ -115,7 +115,7 @@ Creators-Space/
 <tr align="center">
 <td><img src="./Screenshots/homepage-dark.png" height="210px" width="300px" /></td>
 <td><img src="./Screenshots/homepage-light.png" height="210px" width="300px" /></td>
-<td><img src="./Screenshots/bookmark.png" height="210px" width="300px" /></td>
+<td><img src="./Screenshots/bookmarks.png" height="210px" width="300px" /></td>
 </tr>
 <table>
 <tr align="center">
@@ -131,12 +131,7 @@ Creators-Space/
 </table>
   
   
-  <img src="./Screenshots/signup.png" height="200px" width="290px" />
-  <img src="./Screenshots/internship.png" height="200px" width="290px" />
-  <img src="./Screenshots/homepage-dark.png" height="200px" width="290px" />
-  <img src="./Screenshots/homepage-dark.png" height="200px" width="290px" />
-  <img src="./Screenshots/homepage-dark.png" height="200px" width="290px" />
-  <img src="./Screenshots/homepage-dark.png" height="200px" width="290px" />
+
 ---
 ## 🚀 Getting Started
 
