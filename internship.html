@@ -237,16 +237,9 @@
 
   <!-- Loading Internship dynamically from data/internship.json -->
   <script>
-  async function loadInternships() {
-    const container = document.getElementById("internship-list");
-    try {
-      const res = await fetch("./src/data/internship.json");
-      if (!res.ok) throw new Error("Failed to fetch");
-
-      const internships = await res.json();
-      container.innerHTML = "";
-
-      internships.forEach((item) => {
+    function renderInternships()
+    {
+       internships.forEach((item) => {
         const responsibilitiesHTML = item.responsibilities
           .map(task => `<li>${task}</li>`)
           .join("");
@@ -273,6 +266,16 @@
         `;
         container.appendChild(card);
       });
+    }
+  async function loadInternships() {
+    const container = document.getElementById("internship-list");
+    try {
+      const res = await fetch("./src/data/internship.json");
+      if (!res.ok) throw new Error("Failed to fetch");
+
+      const internships = await res.json();
+      container.innerHTML = "";
+renderInternships();
 
       document.querySelectorAll(".toggle-btn").forEach((btn) => {
         btn.addEventListener("click", () => {
