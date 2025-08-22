@@ -85,3 +85,11 @@ const testimonials = [
   });
 
   displayTestimonial(currentTestimonial);
+
+//  Auto slide every 3 seconds
+setInterval(() => {
+  currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+  displayTestimonial(currentTestimonial);
+}, 3000);
+
+displayTestimonial(currentTestimonial);
