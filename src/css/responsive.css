@@ -1,3 +1,4 @@
+/* fixes navBar toggle when width becoms 1047px */
 @media screen and (max-width: 1047px) {
   .navbar .nav-links {
     display: none;
