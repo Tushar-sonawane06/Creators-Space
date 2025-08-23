@@ -162,6 +162,9 @@ body {
 .nav-item.show .arrow {
     transform: rotate(180deg); /* flip arrow */
 }
+#authSection{
+  margin-left: 3rem;
+}
 /* #navbar-x-logo {} */
 /* } */
 
