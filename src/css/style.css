@@ -134,7 +134,7 @@ body {
   margin-top: 5px;
 }
 .arrow{
-   font-size: 14px;   /* force equal size */
+  font-size: 14px;   /* force equal size */
   width: 14px;       /* fix width */
   height: 14px;      /* fix height */
   display: inline-flex;
@@ -161,6 +161,9 @@ body {
 }
 .nav-item.show .arrow {
     transform: rotate(180deg); /* flip arrow */
+}
+#authSection{
+  margin-left: 3rem;
 }
 /* #navbar-x-logo {} */
 /* } */
