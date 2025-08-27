@@ -97,9 +97,19 @@
     <p>Launch your career with hands-on experience from top organizations.</p>
   </section>
 
+  <!--Search Bar-->
+
+<div style="display:flex; width:100%; position:relative; left:250px">
+  <form id="searchbar">
+    <button id="searchBtn" style="background-color: white; border: none;">🔍</button>
+<input type="search" placeholder=" Search for Internships." id="searchinput" style="width:1000px; height:50px; border-radius:5%">
+
+</form>
+</div>
+
   <!-- INTERNSHIP CARDS -->
   <div class="courses-container">
-  <div class="card">
+  <!-- <div class="card">
     <div class="card-content">
       <img src="https://cdn-icons-png.flaticon.com/512/919/919827.png" alt="Web Development" />
       <h3>Web Development Intern</h3>
@@ -157,7 +167,7 @@
         <a href="./apply.html" class="button">Apply Now</a>
       </div>
     </div>
-  </div>
+  </div> -->
 </div>
 
   <!-- Footer -->
@@ -237,16 +247,11 @@
 
   <!-- Loading Internship dynamically from data/internship.json -->
   <script>
-  async function loadInternships() {
-    const container = document.getElementById("internship-list");
-    try {
-      const res = await fetch("./src/data/internship.json");
-      if (!res.ok) throw new Error("Failed to fetch");
-
-      const internships = await res.json();
-      container.innerHTML = "";
-
-      internships.forEach((item) => {
+     var container = document.querySelector(".courses-container");
+    function renderInternships(internships)
+    {
+      container.innerHTML="";
+       internships.forEach((item) => {
         const responsibilitiesHTML = item.responsibilities
           .map(task => `<li>${task}</li>`)
           .join("");
@@ -273,6 +278,31 @@
         `;
         container.appendChild(card);
       });
+    }
+  async function loadInternships() {
+  
+   
+    try {
+      const res = await fetch("./src/data/internship.json");
+      if (!res.ok) throw new Error("Failed to fetch");
+
+      const internships = await res.json();
+      
+      container.innerHTML = "";
+renderInternships(internships);
+
+  document.querySelector("#searchbar").addEventListener("submit",(e)=>{
+      e.preventDefault();
+      let search=document.querySelector("#searchinput").value.trim().toLowerCase();
+      const filtered=internships.filter( item=>item.title.toLowerCase().includes(search) ||
+      item.company.toLowerCase().includes(search) ||
+      item.type.toLowerCase().includes(search));
+      
+      if(filtered.length===0)
+      container.innerHTML="<p style='color:red;text-align:center;font-size:20px;'>No available Internships</p>"
+    else
+      renderInternships(filtered);
+    })
 
       document.querySelectorAll(".toggle-btn").forEach((btn) => {
         btn.addEventListener("click", () => {
@@ -286,6 +316,10 @@
       console.error("Error loading internships:", err);
          }
   };
+
+  document.addEventListener("DOMContentLoaded",loadInternships())
+
+  
 </script>
 
   <!-- Dark Mode JS -->
