@@ -8,18 +8,22 @@
     <!-- <link rel="stylesheet" href="./src/css/style.css" /> -->
     <link rel="stylesheet" href="./src/css/responsive.css" />
     <link rel="stylesheet" href="./src/css/enroll.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./src/css/style.css" />
     <style>
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(135deg, #f8f9fa, #e0e7ff);
-        color: #333;
-        width: 100%;
+
         margin: 0;
         padding: 0;
         box-sizing: border-box;
         overflow-x: hidden; /* Prevent horizontal scroll */
-        padding-top: 100px;
       }
 
       .enroll-title {
@@ -45,21 +49,119 @@
   </head>
 
   <body>
-    <header>
-      <nav class="navbar">
-        <div class="nav-left">
-          <img src="assets/images/logo-nav-dark.png" alt="logo" class="logo" />
-          <span class="brand">Creators-Space</span>
-        </div>
-        <ul class="nav-links">
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="./courses.html">Courses</a></li>
-          <li><a href="./about.html">About</a></li>
-          <li><a href="./services.html">Services</a></li>
-        </ul> 
-      </nav>
-    </header>
+    <div class="navbar">
+      <h1>
+        <a href="./">
+          <img
+            id="navbar-logo"
+            width="80px"
+            src="./assets/images/logo-nav-light.png"
+            alt="logo Creators-Space"
+          />
 
+          <br />Creators-Space</a
+        >
+      </h1>
+      <div class="nav-links align-items-center">
+        <a href="index.html">Home</a>
+
+        <!-- dropDown 1 - About → About Us, Campus Ambassador-->
+        <li class="nav-item">
+          <a href="#" class="dropdown-toggle"
+            >About <i class="fa-solid fa-chevron-down arrow"></i
+          ></a>
+          <div class="dropdown">
+            <a href="about.html">About Us</a>
+            <a href="campus-ambassador.html">Campus Ambassador</a>
+          </div>
+        </li>
+        <!--dropDown 2 - Programs → Courses, Internship, Services -->
+        <li class="nav-item">
+          <a href="#" class="dropdown-toggle"
+            >Programs <i class="fa-solid fa-chevron-down arrow"></i
+          ></a>
+          <div class="dropdown">
+            <a href="courses.html">Courses</a>
+            <a href="internship.html">Internship</a>
+            <a href="services.html" class="active">Services</a>
+            <a href="freelancing.html">Freelance</a>
+          </div>
+        </li>
+        <!--dropDown 3 - Resources → Blog, Bookmarks, Certificates  -->
+        <li class="nav-item">
+          <a href="#" class="dropdown-toggle"
+            >Resources <i class="fa-solid fa-chevron-down arrow"></i
+          ></a>
+          <div class="dropdown">
+            <a href="blog.html">Blog</a>
+            <a href="bookmarked.html">BookMarks</a>
+            <a href="./certificate/">Certificates</a>
+          </div>
+        </li>
+        <a href="projects.html">Projects</a>
+        <!-- Navbar -->
+        <div id="authSection">
+          <a href="./login.html" class="btn login">Log In</a>
+          <a href="./signup.html" class="btn signup">Sign Up</a>
+        </div>
+
+        <div
+          id="userSection"
+          style="display: none; align-items: center; gap: 10px"
+        >
+          <button id="logoutBtn" class="btn login">Logout</button>
+          <a href="profile.html" title="Your Profile">
+            <img
+              id="profileImg"
+              src="https://cdn-icons-png.flaticon.com/512/847/847969.png"
+              alt="Profile"
+              width="30"
+              style="border-radius: 50%"
+            />
+          </a>
+        </div>
+      </div>
+      <div
+        class="nav-toggle align-items-center justify-content-center"
+        onclick="toggleNav()"
+      >
+        <svg viewBox="0 0 18 18" id="navbar-barger-logo" class="">
+          <polyline
+            id="globalnav-menutrigger-bread-bottom"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            points="2 12, 16 12"
+            class="globalnav-menutrigger-bread globalnav-menutrigger-bread-bottom"
+          ></polyline>
+          <polyline
+            id="globalnav-menutrigger-bread-top"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            points="2 5, 16 5"
+            class="globalnav-menutrigger-bread globalnav-menutrigger-bread-top"
+          ></polyline>
+        </svg>
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          id="navbar-x-logo"
+          class="bi bi-x-lg d-none"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
+          />
+        </svg>
+      </div>
+    </div>
+     
     <div class="enroll-section">
       <div class="intro">
         <img
@@ -135,12 +237,14 @@
         <!-- Left: Logo + Social -->
         <div class="footer-left">
           <div class="footer-logo">
-            <img src="assets/images/logo-nav-dark.png" alt="Creators-Space Logo" />
+            <img src="assets/images/logo.png" alt="Creators-Space Logo" />
             <h2>Creators-Space</h2>
           </div>
           <h3 class="footer-title">Social Media</h3>
           <div class="social-icons">
-            <a  href="https://linkedin.com/in/anuragvishwakarma" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://linkedin.com/in/anuragvishwakarma" target="_blank"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-x-twitter"></i></a>
@@ -150,8 +254,18 @@
         <!-- Middle: Contact Info -->
         <div class="footer-middle">
           <h3>Contact Us</h3>
-          <p><i class="fas fa-envelope"></i> 21brac0401@polygwalior.ac.in</p>
-          <p><i class="fas fa-phone"></i> +91 88xxxxxx89</p>
+          <p class="footer-detail">
+            <a href="mailto:21brac0401@polygwalior.ac.in"
+              ><i class="fa-solid fa-envelope" id="envelope-icon"></i
+              >21brac0401@polygwalior.ac.in</a
+            >
+          </p>
+          <br />
+          <p class="footer-detail">
+            <a href="tel:+9188xxxxxx89"
+              ><i class="fa-solid fa-phone" id="call-icon"></i>+91 88xxxxxx89</a
+            >
+          </p>
         </div>
 
         <!-- Right: Contact Form -->
@@ -204,6 +318,31 @@
           alert("Form submitted successfully!");
           window.location.href = "index.html";
         });
-    </script> 
+    </script>
+    <script>
+      // drop-down menu
+      document.querySelectorAll(".dropdown-toggle").forEach((btn) => {
+        btn.addEventListener("click", function (e) {
+          e.stopPropagation(); // prevent auto close immediately
+          this.parentElement.classList.toggle("show");
+
+          // Close other dropdowns
+          document.querySelectorAll(".nav-item").forEach((drop) => {
+            if (drop !== this.parentElement) {
+              drop.classList.remove("show");
+            }
+          });
+        });
+      });
+
+      // Close dropdown if clicked outside
+      window.addEventListener("click", function (e) {
+        if (!e.target.closest(".nav-item")) {
+          document.querySelectorAll(".nav-item").forEach((drop) => {
+            drop.classList.remove("show");
+          });
+        }
+      });
+    </script>
   </body>
 </html>
