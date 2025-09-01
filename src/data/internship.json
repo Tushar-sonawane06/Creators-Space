@@ -40,5 +40,262 @@
       "Improve usability & accessibility"
     ],
     "applyLink": "#"
+  },
+  {
+  "title": "Software Engineering Intern",
+  "company": "TechNova",
+  "type": "Remote",
+  "duration": "6 Months",
+  "stipend": "10000",
+  "image": "https://cdn-icons-png.flaticon.com/512/919/919836.png",
+  "responsibilities": [
+    "Work with React and Node.js",
+    "Contribute to full-stack features",
+    "Write unit and integration tests"
+  ],
+  "applyLink": "#"
+},
+{
+  "title": "Data Science Intern",
+  "company": "DataWiz",
+  "type": "In-Office",
+  "duration": "4 Months",
+  "stipend": "8000",
+  "image": "https://cdn-icons-png.flaticon.com/512/2103/2103633.png",
+  "responsibilities": [
+    "Analyze datasets using Python",
+    "Build dashboards in PowerBI",
+    "Collaborate with research team"
+  ],
+  "applyLink": "#"
+},
+{
+  "title": "Mobile App Development Intern",
+  "company": "Appify",
+  "type": "Hybrid",
+  "duration": "3 Months",
+  "stipend": "7000",
+  "image": "https://cdn-icons-png.flaticon.com/512/919/919825.png",
+  "responsibilities": [
+    "Develop Android apps with Kotlin",
+    "Integrate REST APIs",
+    "Optimize app performance"
+  ],
+  "applyLink": "#"
+},
+{
+  "title": "Cloud Intern",
+  "company": "SkyNet Solutions",
+  "type": "Remote",
+  "duration": "2 Months",
+  "stipend": "Unpaid",
+  "image": "https://cdn-icons-png.flaticon.com/512/873/873120.png",
+  "responsibilities": [
+    "Work with AWS services (EC2, S3)",
+    "Assist in cloud deployment",
+    "Maintain CI/CD pipelines"
+  ],
+  "applyLink": "#"
+},
+{
+  "title": "Cybersecurity Intern",
+  "company": "SecureTech",
+  "type": "In-Office",
+  "duration": "3 Months",
+  "stipend": "6000",
+  "image": "https://cdn-icons-png.flaticon.com/512/1048/1048934.png",
+  "responsibilities": [
+    "Conduct vulnerability assessments",
+    "Implement basic security patches",
+    "Monitor network traffic"
+  ],
+  "applyLink": "#"
+},
+  {
+    "title": "Backend Development Intern",
+    "company": "CodeCrafters",
+    "type": "Remote",
+    "duration": "5 Months",
+    "stipend": "9000",
+    "image": "https://cdn-icons-png.flaticon.com/512/5968/5968381.png",
+    "responsibilities": [
+      "Build REST APIs with Node.js & Express",
+      "Manage database schemas with MongoDB",
+      "Optimize backend performance"
+    ],
+    "applyLink": "#"
+  },
+  {
+    "title": "DevOps Intern",
+    "company": "NextGen Systems",
+    "type": "Hybrid",
+    "duration": "3 Months",
+    "stipend": "7000",
+    "image": "https://cdn-icons-png.flaticon.com/512/4248/4248443.png",
+    "responsibilities": [
+      "Work on Docker & Kubernetes",
+      "Automate deployments with Jenkins",
+      "Assist in monitoring & logging tools"
+    ],
+    "applyLink": "#"
+  },
+  {
+    "title": "AR/VR Intern",
+    "company": "ImmersiTech",
+    "type": "In-Office",
+    "duration": "4 Months",
+    "stipend": "10000",
+    "image": "https://cdn-icons-png.flaticon.com/512/6212/6212930.png",
+    "responsibilities": [
+      "Develop AR/VR prototypes in Unity",
+      "Research immersive technologies",
+      "Test VR applications with QA team"
+    ],
+    "applyLink": "#"
+  },
+  {
+    "title": "Game Development Intern",
+    "company": "PixelForge Studios",
+    "type": "Remote",
+    "duration": "3 Months",
+    "stipend": "5000",
+    "image": "https://cdn-icons-png.flaticon.com/512/3075/3075977.png",
+    "responsibilities": [
+      "Develop 2D/3D games with Unity",
+      "Collaborate with design team",
+      "Optimize gameplay performance"
+    ],
+    "applyLink": "#"
+  },
+  {
+    "title": "Blockchain Intern",
+    "company": "ChainLabs",
+    "type": "Remote",
+    "duration": "2 Months",
+    "stipend": "Unpaid",
+    "image": "https://cdn-icons-png.flaticon.com/512/2232/2232688.png",
+    "responsibilities": [
+      "Develop smart contracts with Solidity",
+      "Research blockchain protocols",
+      "Contribute to decentralized apps (dApps)"
+    ],
+    "applyLink": "#"
+  },
+  {
+    "title": "Embedded Systems Intern",
+    "company": "ChipLogic",
+    "type": "In-Office",
+    "duration": "5 Months",
+    "stipend": "10000",
+    "image": "https://cdn-icons-png.flaticon.com/512/4406/4406234.png",
+    "responsibilities": [
+      "Work with C/C++ on microcontrollers",
+      "Test IoT devices & firmware",
+      "Integrate hardware with software modules"
+    ],
+    "applyLink": "#"
+  },
+  {
+    "title": "Data Analyst Intern",
+    "company": "Insightify",
+    "type": "Hybrid",
+    "duration": "3 Months",
+    "stipend": "8000",
+    "image": "https://cdn-icons-png.flaticon.com/512/3313/3313107.png",
+    "responsibilities": [
+      "Clean and preprocess datasets",
+      "Visualize data using Tableau/PowerBI",
+      "Perform statistical analysis in Python"
+    ],
+    "applyLink": "#"
+  },
+  {
+    "title": "Quantum Computing Intern",
+    "company": "QubitLabs",
+    "type": "Remote",
+    "duration": "6 Months",
+    "stipend": "15000",
+    "image": "https://cdn-icons-png.flaticon.com/512/4861/4861656.png",
+    "responsibilities": [
+      "Learn quantum programming with Qiskit",
+      "Simulate quantum algorithms",
+      "Research quantum cryptography use cases"
+    ],
+    "applyLink": "#"
+  },
+   {
+    "title": "Computer Vision Intern",
+    "company": "VisionX",
+    "type": "Hybrid",
+    "duration": "4 Months",
+    "stipend": "10000",
+    "image": "https://cdn-icons-png.flaticon.com/512/4712/4712107.png",
+    "responsibilities": [
+      "Develop image recognition models",
+      "Work on object detection & tracking",
+      "Implement real-time vision pipelines with OpenCV"
+    ],
+    "applyLink": "#"
+  },
+  {
+    "title": "IoT Intern",
+    "company": "SmartThings",
+    "type": "Hybrid",
+    "duration": "3 Months",
+    "stipend": "7000",
+    "image": "https://cdn-icons-png.flaticon.com/512/2942/2942789.png",
+    "responsibilities": [
+      "Develop IoT apps for smart devices",
+      "Connect devices to cloud platforms",
+      "Work on MQTT and real-time data streaming"
+    ],
+    "applyLink": "#"
+  },
+  {
+    "title": "NLP Intern",
+    "company": "LingoAI",
+    "type": "Remote",
+    "duration": "3 Months",
+    "stipend": "9000",
+    "image": "https://cdn-icons-png.flaticon.com/512/4712/4712102.png",
+    "responsibilities": [
+      "Work on text classification & sentiment analysis",
+      "Fine-tune transformer models (BERT, GPT)",
+      "Build chatbots and conversational agents"
+    ],
+    "applyLink": "#"
+  },
+  {
+    "title": "Automation Intern",
+    "company": "AutoWorks",
+    "type": "In-Office",
+    "duration": "2 Months",
+    "stipend": "8000",
+    "image": "https://cdn-icons-png.flaticon.com/512/888/888879.png",
+    "responsibilities": [
+      "Build test automation frameworks",
+      "Develop scripts for process automation",
+      "Work with Selenium and Python"
+    ],
+    "applyLink": "#"
+  },{
+    "title": "Big Data Intern",
+    "company": "DataOcean",
+    "type": "Remote",
+    "duration": "4 Months",
+    "stipend": "11000",
+    "image": "https://cdn-icons-png.flaticon.com/512/1087/1087815.png",
+    "responsibilities": [
+      "Work with Hadoop and Spark",
+      "Build scalable data pipelines",
+      "Process and analyze large datasets"
+    ],
+    "applyLink": "#"
   }
+
+ 
 ]
+
+
+
+

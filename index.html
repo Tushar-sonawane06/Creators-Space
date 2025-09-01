@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="author" content="Anurag Vishwakarma Creators-Space">
@@ -13,7 +12,7 @@
   <link rel="stylesheet" href="./src/css/style.css">
   <link rel="stylesheet" href="./src/css/responsive.css">
   <link rel="stylesheet" href="./src/css/newsletter.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
 </head>
 
 <body id="main-body" class="overflow-x-hidden">
@@ -22,19 +21,40 @@
     <h1><a href="./">
         <img id="navbar-logo" width="80px" src="./assets/images/logo-nav-light.png" alt="logo Creators-Space">
 
-        <br>Creators-Space</a></h1>
+        <br>Creators-Space</a>
+    </h1>
     <div class="nav-links align-items-center">
+      
       <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="courses.html">Courses</a>
-      <a href="services.html" class="active">Services</a>
-      <a href="internship.html">Internship</a>
-      <a href="campus-ambassador.html">Campus Ambassador</a>
-      <a href="blog.html">Blog</a>
-      <a href="bookmarked.html">BookMarks</a>
-      <a href="projects.html">Projects</a>
-      <a href="roadmap.html">Roadmaps</a>
-      <a href="./certificate/">Certificates</a>
+
+      <!-- dropDown 1 - About → About Us, Campus Ambassador-->
+      <li class="nav-item">
+        <a href="#" class="dropdown-toggle">About <i class="fa-solid fa-chevron-down arrow"></i></a>
+        <div class="dropdown">
+          <a href="about.html">About Us</a>
+          <a href="campus-ambassador.html">Campus Ambassador</a>
+        </div>
+      </li> 
+      <!--dropDown 2 - Programs → Courses, Internship, Services -->
+      <li class="nav-item">
+        <a href="#" class="dropdown-toggle">Programs <i class="fa-solid fa-chevron-down arrow"></i></a>
+        <div class="dropdown">
+          <a href="courses.html">Courses</a>
+          <a href="internship.html">Internship</a>
+          <a href="services.html" class="active">Services</a>
+          <a href="freelancing.html">Freelance</a>
+        </div>
+      </li>
+       <!--dropDown 3 - Resources → Blog, Bookmarks, Certificates  -->
+       <li class="nav-item">
+        <a href="#" class="dropdown-toggle">Resources <i class="fa-solid fa-chevron-down arrow"></i></a>
+        <div class="dropdown">
+          <a href="blog.html">Blog</a>
+          <a href="bookmarked.html">BookMarks</a>
+          <a href="./certificate/">Certificates</a>
+        </div>
+       </li> 
+      <a href="projects.html">Projects</a> 
       <!-- Navbar -->
       <div id="authSection">
         <a href="./login.html" class="btn login">Log In</a>
@@ -223,44 +243,44 @@
 
       <div class="testimonial-card" id="testimonial-card-1">
         <img id="testimonial-img-left" alt="..." />
-        <p class="testimonial-quote" id="testimonial-message-left"></p>
         <p class="testimonial-name" id="testimonial-name-left"></p>
         <p class="testimonial-position" id="testimonial-position-left"></p>
+        <p class="testimonial-quote" id="testimonial-message-left"></p>
+        
       </div>
 
       <div class="testimonial-card">
         <img id="testimonial-img-mid" alt="..." />
-        <p class="testimonial-quote" id="testimonial-message-mid"></p>
         <p class="testimonial-name" id="testimonial-name-mid"></p>
         <p class="testimonial-position" id="testimonial-position-mid"></p>
+        <p class="testimonial-quote" id="testimonial-message-mid"></p>
+        
       </div>
 
       <div class="testimonial-card" id="testimonial-card-3">
         <img id="testimonial-img-right" alt="..." />
-        <p class="testimonial-quote" id="testimonial-message-right"></p>
         <p class="testimonial-name" id="testimonial-name-right"></p>
         <p class="testimonial-position" id="testimonial-position-right"></p>
+        <p class="testimonial-quote" id="testimonial-message-right"></p>
       </div>
     </div>
   </div>
 
   <div class="margin-top-1">
-    <center>
-      <button class="btn btn-left my-2 mx-2" id="testimonial-btn-left">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-caret-left-fill"
+    <!-- <center>
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"  class="btn btn-left my-2 mx-2" id="testimonial-btn-left"
           viewBox="0 0 16 16">
           <path
             d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
         </svg>
-      </button>
-      <button class="btn btn-right my-2 mx-2" id="testimonial-btn-right">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-          class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="btn btn-right my-2 mx-2" id="testimonial-btn-right"
+          viewBox="0 0 16 16">
           <path
             d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
         </svg>
-      </button>
-    </center>
+      
+    </center> -->
 
     <!-- testimonial End -->
     <div class="margin-top-5"></div>
@@ -400,7 +420,9 @@
     </button>
 
     <script src="./src/js/newsletter.js"></script>
-    <script src="./src/js/auth.js"></script>
+    <script src="./src/js/auth.js"></script> 
+
+     
 </body>
 
 </html>

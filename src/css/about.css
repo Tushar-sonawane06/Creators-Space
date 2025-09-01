@@ -291,7 +291,7 @@ body {
 }
 
 #main-body.dark button{
-  background-color: white;
+  background-color: blue;
   
 }
 #main-body.dark button:hover {
@@ -509,7 +509,7 @@ nav {
 .nav-links li a {
   text-decoration: none;
   color: #000;
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: 400;
 }
 

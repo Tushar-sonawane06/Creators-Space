@@ -24,6 +24,7 @@
       align-items: center;
       min-height: 100vh;
       /*       padding: 20px; */
+      overflow-x: hidden;
     }
 
     .container {
@@ -165,7 +166,7 @@
     /* Google Button */
     .google-btn {
       display: flex;
-      align-items: center;
+      text-align: center;
       justify-content: center;
       gap: 8px;
       width: 100%;
@@ -176,14 +177,15 @@
       padding: 10px;
       font-size: 14px;
       font-weight: 500;
+      margin-bottom: 12px;
       cursor: pointer;
       box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
-      transition: background-color 0.3s ease;
+      transition: box-shadow 0.3s ease;
     }
 
 
     .google-btn:hover {
-      background-color: #f7f8f8;
+       box-shadow:none;
     }
 
     .google-icon {
@@ -222,19 +224,36 @@
     .nav-hamburger{
       cursor: pointer;
     }
+    .logo-container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: 12px;
+      margin: 10px 2px;
+      
+    }
+    #navbar-links{
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      justify-content: space-between;
+      white-space: nowrap;
+      align-items: center;
+    }
   </style>
 </head>
 
 <body>
   <div class="navbar">
-    <h1><a href="./">
-        <img id="navbar-logo" width="80px" src="./assets/images/logo-nav-light.png" alt="logo Creators-Space">
-        <br>Creators-Space</a></h1>
-    <div class="nav-links align-items-center">
+    <div class="logo-container">
+      <a href="./"><img id="navbar-logo" width="80px" src="./assets/images/logo-nav-light.png" alt="logo Creators-Space"></a>
+      <h1><a href="./">Creators-Space</a></h1>
+    </div>
+    
+    <div id="navbar-links" class="nav-links align-items-center">
       <a href="index.html">Home</a>
       <a href="about.html">About Us</a>
       <a href="courses.html">Courses</a>
-      <a href="about.html">About</a>
       <a href="services.html" class="active">Services</a>
       <a href="internship.html">Internship</a>
       <a href="campus-ambassador.html">Campus Ambassador</a>

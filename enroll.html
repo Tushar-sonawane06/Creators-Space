@@ -1,151 +1,348 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Enroll Now - Creators-Space</title>
-  <link rel="stylesheet" href="./src/css/utils.css">
-  <link rel="stylesheet" href="./src/css/style.css">
-  <link rel="stylesheet" href="./src/css/responsive.css">
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #f8f9fa, #e0e7ff);
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enroll Now - Creators-Space</title>
+    <link rel="stylesheet" href="./src/css/utils.css" />
+    <!-- <link rel="stylesheet" href="./src/css/style.css" /> -->
+    <link rel="stylesheet" href="./src/css/responsive.css" />
+    <link rel="stylesheet" href="./src/css/enroll.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
-    .navbar {
-      background-color: #6c5ce7;
-      color: white;
-      padding: 1rem 2rem;
-    }
-
-    .navbar h1 a {
-      text-decoration: none;
-      color: white;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .main {
-      max-width: 600px;
-      margin: 3rem auto;
-      background: white;
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    h1 {
-      text-align: center;
-      color: #6c5ce7;
-    }
-
-    form label {
-      display: block;
-      margin: 1rem 0 0.3rem;
-      font-weight: 600;
-    }
-
-    input, select {
-      width: 100%;
-      padding: 0.8rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1rem;
-    }
-
-    button {
-      margin-top: 2rem;
-      width: 100%;
-      background-color: #6c5ce7;
-      color: white;
-      border: none;
-      padding: 1rem;
-      font-size: 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #5e54c4;
-    }
-
-    @media screen and (max-width: 600px) {
-      .main {
-        margin: 2rem 1rem;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <div class="navbar">
-    <h1><a href="./index.html">
-      <img width="60px" src="./assets/images/logo-nav.png" alt="logo"> Creators-Space
-    </a></h1>
-  </div>
-
-  <div class="main">
-    <h1>Enroll Now</h1>
-    <form id="enrollForm">
-      <label for="name">Full Name:</label>
-      <input type="text" id="name" required placeholder="Your full name" />
-
-      <label for="email">Email (only @gmail.com):</label>
-      <input type="email" id="email" required placeholder="e.g. example@gmail.com" />
-
-      <label for="phone">Phone Number (10 digits):</label>
-      <input type="tel" id="phone" required placeholder="e.g. xxxxxxxxxx" />
-
-      <label for="course">Select Course:</label>
-      <select id="course" required>
-        <option value="">-- Choose a course --</option>
-        <option value="Web Development">Web Development</option>
-        <option value="C Programming">C Programming</option>
-        <option value="Python Programming">Python Programming</option>
-        <option value="UI/UX Design">UI/UX Design</option>
-        <option value="Graphic Design">Graphic Design</option>
-      </select>
-
-      <button type="submit">Submit</button>
-    </form>
-  </div>
-
-  <script>
-    document.getElementById("enrollForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const course = document.getElementById("course").value;
-
-      const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
-      const phoneRegex = /^[1-9]\d{9}$/;
-
-      if (!emailRegex.test(email)) {
-        alert("Please enter a valid Gmail address.");
-        return;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        overflow-x: hidden; /* Prevent horizontal scroll */
       }
 
-      if (!phoneRegex.test(phone)) {
-        alert("Please enter a valid 10-digit phone number starting with 6-9.");
-        return;
+      .enroll-title {
+        border-radius: 12px;
+        padding: 0.5rem 1rem;
+        text-align: center;
+        color: #6c5ce7;
+        transition: all 3s ease;
+        animation: beat 1.5s infinite ease-in-out;
       }
-
-      if (!course) {
-        alert("Please select a course.");
-        return;
+      @keyframes beat {
+        0% {
+          box-shadow: 0 0 0 rgba(124, 77, 255, 0.7);
+        }
+        50% {
+          box-shadow: 0 0 15px rgba(124, 77, 255, 0.5);
+        }
+        100% {
+          box-shadow: 0 0 0 rgba(124, 77, 255, 0.7);
+        }
       }
+    </style>
+  </head>
 
-      alert("Form submitted successfully!");
-      window.location.href = "index.html";
-    });
-  </script>
-</body>
+  <body>
+    <div class="navbar">
+      <h1>
+        <a href="./">
+          <img
+            id="navbar-logo"
+            width="80px"
+            src="./assets/images/logo-nav-light.png"
+            alt="logo Creators-Space"
+          />
+
+          <br />Creators-Space</a
+        >
+      </h1>
+      <div class="nav-links align-items-center">
+        <a href="index.html">Home</a>
+
+        <!-- dropDown 1 - About → About Us, Campus Ambassador-->
+        <li class="nav-item">
+          <a href="#" class="dropdown-toggle"
+            >About <i class="fa-solid fa-chevron-down arrow"></i
+          ></a>
+          <div class="dropdown">
+            <a href="about.html">About Us</a>
+            <a href="campus-ambassador.html">Campus Ambassador</a>
+          </div>
+        </li>
+        <!--dropDown 2 - Programs → Courses, Internship, Services -->
+        <li class="nav-item">
+          <a href="#" class="dropdown-toggle"
+            >Programs <i class="fa-solid fa-chevron-down arrow"></i
+          ></a>
+          <div class="dropdown">
+            <a href="courses.html">Courses</a>
+            <a href="internship.html">Internship</a>
+            <a href="services.html" class="active">Services</a>
+            <a href="freelancing.html">Freelance</a>
+          </div>
+        </li>
+        <!--dropDown 3 - Resources → Blog, Bookmarks, Certificates  -->
+        <li class="nav-item">
+          <a href="#" class="dropdown-toggle"
+            >Resources <i class="fa-solid fa-chevron-down arrow"></i
+          ></a>
+          <div class="dropdown">
+            <a href="blog.html">Blog</a>
+            <a href="bookmarked.html">BookMarks</a>
+            <a href="./certificate/">Certificates</a>
+          </div>
+        </li>
+        <a href="projects.html">Projects</a>
+        <!-- Navbar -->
+        <div id="authSection">
+          <a href="./login.html" class="btn login">Log In</a>
+          <a href="./signup.html" class="btn signup">Sign Up</a>
+        </div>
+
+        <div
+          id="userSection"
+          style="display: none; align-items: center; gap: 10px"
+        >
+          <button id="logoutBtn" class="btn login">Logout</button>
+          <a href="profile.html" title="Your Profile">
+            <img
+              id="profileImg"
+              src="https://cdn-icons-png.flaticon.com/512/847/847969.png"
+              alt="Profile"
+              width="30"
+              style="border-radius: 50%"
+            />
+          </a>
+        </div>
+      </div>
+      <div
+        class="nav-toggle align-items-center justify-content-center"
+        onclick="toggleNav()"
+      >
+        <svg viewBox="0 0 18 18" id="navbar-barger-logo" class="">
+          <polyline
+            id="globalnav-menutrigger-bread-bottom"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            points="2 12, 16 12"
+            class="globalnav-menutrigger-bread globalnav-menutrigger-bread-bottom"
+          ></polyline>
+          <polyline
+            id="globalnav-menutrigger-bread-top"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            points="2 5, 16 5"
+            class="globalnav-menutrigger-bread globalnav-menutrigger-bread-top"
+          ></polyline>
+        </svg>
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          id="navbar-x-logo"
+          class="bi bi-x-lg d-none"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
+          />
+        </svg>
+      </div>
+    </div>
+     
+    <div class="enroll-section">
+      <div class="intro">
+        <img
+          src="assets/images/illustrationimg.webp"
+          alt="Learning illustration"
+          class="intro-img"
+        />
+
+        <div class="intro-text">
+          <div class="title">
+            <img
+              id="mind-anim"
+              src="https://cdn.dribbble.com/userupload/44366577/file/29261ea2f21de39cc959d5cd1c78c04e.gif"
+              alt=""
+            />
+            <h2>Why Enroll?</h2>
+            \
+          </div>
+          <p>
+            Join our expert-led batches to gain hands-on experience,
+            interactive.
+          </p>
+          <p>
+            Be part of a supportive community, get personal mentorship, and
+            start your journey towards success today!
+          </p>
+          <ul>
+            <li>Expert mentorship from industry professionals</li>
+            <li>Real-world projects to boost your portfolio</li>
+            <li>Career guidance & job preparation support</li>
+            <li>Interactive sessions and real-world projects.</li>
+            <li>Personal mentorship and guidance.</li>
+            <li>Certification upon successful completion.</li>
+            <li>Access to a supportive learning community.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Enroll Form Card -->
+      <div class="enroll-card">
+        <h2 class="enroll-title">Enroll Now</h2>
+        <form id="enrollForm">
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" placeholder="Your full name" />
+
+          <label for="email">Email (only @gmail.com):</label>
+          <input
+            type="email"
+            id="email"
+            required
+            placeholder="e.g. example@gmail.com"
+          />
+
+          <label for="phone">Phone Number (10 digits):</label>
+          <input type="tel" id="phone" required placeholder="e.g. xxxxxxxxxx" />
+
+          <label for="course">Select Course:</label>
+          <select id="course" required>
+            <option value="">-- Choose a course --</option>
+            <option value="Web Development">Web Development</option>
+            <option value="C Programming">C Programming</option>
+            <option value="Python Programming">Python Programming</option>
+            <option value="UI/UX Design">UI/UX Design</option>
+            <option value="Graphic Design">Graphic Design</option>
+          </select>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Left: Logo + Social -->
+        <div class="footer-left">
+          <div class="footer-logo">
+            <img src="assets/images/logo.png" alt="Creators-Space Logo" />
+            <h2>Creators-Space</h2>
+          </div>
+          <h3 class="footer-title">Social Media</h3>
+          <div class="social-icons">
+            <a href="https://linkedin.com/in/anuragvishwakarma" target="_blank"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <!-- Middle: Contact Info -->
+        <div class="footer-middle">
+          <h3>Contact Us</h3>
+          <p class="footer-detail">
+            <a href="mailto:21brac0401@polygwalior.ac.in"
+              ><i class="fa-solid fa-envelope" id="envelope-icon"></i
+              >21brac0401@polygwalior.ac.in</a
+            >
+          </p>
+          <br />
+          <p class="footer-detail">
+            <a href="tel:+9188xxxxxx89"
+              ><i class="fa-solid fa-phone" id="call-icon"></i>+91 88xxxxxx89</a
+            >
+          </p>
+        </div>
+
+        <!-- Right: Contact Form -->
+        <div class="footer-right">
+          <h3>Get In Touch</h3>
+          <form>
+            <input type="text" placeholder="Your name" required />
+            <input type="email" placeholder="Your email" required />
+            <textarea placeholder="Your message" required></textarea>
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2024 - 2025 Creators-Space. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      document
+        .getElementById("enrollForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("name").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const phone = document.getElementById("phone").value.trim();
+          const course = document.getElementById("course").value;
+
+          const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+          const phoneRegex = /^[1-9]\d{9}$/;
+
+          if (!emailRegex.test(email)) {
+            alert("Please enter a valid Gmail address.");
+            return;
+          }
+
+          if (!phoneRegex.test(phone)) {
+            alert(
+              "Please enter a valid 10-digit phone number starting with 6-9."
+            );
+            return;
+          }
+
+          if (!course) {
+            alert("Please select a course.");
+            return;
+          }
+
+          alert("Form submitted successfully!");
+          window.location.href = "index.html";
+        });
+    </script>
+    <script>
+      // drop-down menu
+      document.querySelectorAll(".dropdown-toggle").forEach((btn) => {
+        btn.addEventListener("click", function (e) {
+          e.stopPropagation(); // prevent auto close immediately
+          this.parentElement.classList.toggle("show");
+
+          // Close other dropdowns
+          document.querySelectorAll(".nav-item").forEach((drop) => {
+            if (drop !== this.parentElement) {
+              drop.classList.remove("show");
+            }
+          });
+        });
+      });
+
+      // Close dropdown if clicked outside
+      window.addEventListener("click", function (e) {
+        if (!e.target.closest(".nav-item")) {
+          document.querySelectorAll(".nav-item").forEach((drop) => {
+            drop.classList.remove("show");
+          });
+        }
+      });
+    </script>
+  </body>
 </html>

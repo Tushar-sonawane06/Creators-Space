@@ -7,10 +7,12 @@
   <link rel="stylesheet" href="./src/css/style.css">
   <link rel="stylesheet" href="./src/css/utils.css">
   <link rel="stylesheet" href="./src/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
   <style>
     body {
       background: linear-gradient(135deg, #e0f7fa, #fff3e0);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
     }
 
     .form-container {
@@ -90,6 +92,77 @@
   </style>
 </head>
 <body>
+   <div class="navbar">
+    <h1><a href="./">
+        <img id="navbar-logo" width="80px" src="./assets/images/logo-nav-light.png" alt="logo Creators-Space">
+
+        <br>Creators-Space</a>
+    </h1>
+    <div class="nav-links align-items-center">
+      
+      <a href="index.html">Home</a>
+
+      <!-- dropDown 1 - About → About Us, Campus Ambassador-->
+      <li class="nav-item">
+        <a href="#" class="dropdown-toggle">About <i class="fa-solid fa-chevron-down arrow"></i></a>
+        <div class="dropdown">
+          <a href="about.html">About Us</a>
+          <a href="campus-ambassador.html">Campus Ambassador</a>
+        </div>
+      </li> 
+      <!--dropDown 2 - Programs → Courses, Internship, Services -->
+      <li class="nav-item">
+        <a href="#" class="dropdown-toggle">Programs <i class="fa-solid fa-chevron-down arrow"></i></a>
+        <div class="dropdown">
+          <a href="courses.html">Courses</a>
+          <a href="internship.html">Internship</a>
+          <a href="services.html" class="active">Services</a>
+          <a href="freelancing.html">Freelance</a>
+        </div>
+      </li>
+       <!--dropDown 3 - Resources → Blog, Bookmarks, Certificates  -->
+       <li class="nav-item">
+        <a href="#" class="dropdown-toggle">Resources <i class="fa-solid fa-chevron-down arrow"></i></a>
+        <div class="dropdown">
+          <a href="blog.html">Blog</a>
+          <a href="bookmarked.html">BookMarks</a>
+          <a href="./certificate/">Certificates</a>
+        </div>
+       </li> 
+      <a href="projects.html">Projects</a> 
+      <!-- Navbar -->
+      <div id="authSection">
+        <a href="./login.html" class="btn login">Log In</a>
+        <a href="./signup.html" class="btn signup">Sign Up</a>
+      </div>
+
+      <div id="userSection" style="display: none; align-items: center; gap: 10px;">
+        <button id="logoutBtn" class="btn login">Logout</button>
+        <a href="profile.html" title="Your Profile">
+          <img id="profileImg" src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Profile" width="30"
+            style="border-radius: 50%;" />
+        </a>
+      </div>
+    </div>
+    <div class="nav-toggle align-items-center justify-content-center" onclick="toggleNav()">
+      <svg viewBox="0 0 18 18" id="navbar-barger-logo" class="">
+        <polyline id="globalnav-menutrigger-bread-bottom" fill="none" stroke="currentColor" stroke-width="1.2"
+          stroke-linecap="round" stroke-linejoin="round" points="2 12, 16 12"
+          class="globalnav-menutrigger-bread globalnav-menutrigger-bread-bottom"></polyline>
+        <polyline id="globalnav-menutrigger-bread-top" fill="none" stroke="currentColor" stroke-width="1.2"
+          stroke-linecap="round" stroke-linejoin="round" points="2 5, 16 5"
+          class="globalnav-menutrigger-bread globalnav-menutrigger-bread-top"></polyline>
+      </svg>
+
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="navbar-x-logo" class="bi bi-x-lg d-none"
+        viewBox="0 0 16 16">
+        <path
+          d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+      </svg>
+
+
+    </div>
+  </div>
   <div class="form-container">
     <h2>Apply for Internship</h2>
     <form id="internship-form" novalidate>
@@ -198,5 +271,10 @@
 
     window.addEventListener("DOMContentLoaded", loadCourses);
   </script>
+      <script src="./src/js/hero-section.js"></script>
+    <script src="./src/js/navbar.js"></script>
+    <script src="./src/js/slider.js"></script>
+    <script src="./src/js/scrollToTop.js"></script>
+    <script src="./src/js/utils.js"></script>
 </body>
 </html>
