@@ -21,6 +21,21 @@
   transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
+body.dark .dropdown {
+  background-color: #333;
+  border: 1px solid #555;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .dropdown a {
+  color: #fff;
+  border-bottom-color: #555;
+}
+
+body.dark .dropdown a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
 
 .service-icon {
   width: 60px;

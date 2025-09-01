@@ -91,7 +91,7 @@ body {
   }
 }
 
-.navbar {
+/*.navbar {
 }
 
 .navbar h1 {
@@ -102,7 +102,7 @@ body {
 
 .navbar .nav-links a {
 }
-
+*/
 .navbar .nav-links a:nth-child(-n + 7)::after {
   content: "";
   position: absolute;
@@ -159,10 +159,10 @@ body {
   color: black;
 }
 
-.navbar .nav-links {
+/*.navbar .nav-links {
   /* Removed to use style.css nav-links styles */
-}
 
+*/
 .padding-inline-lg {
   padding-inline: 2rem; /* same as the toggle switch container */
 }
@@ -192,6 +192,21 @@ body {
     text-align: center;
     margin-bottom: 40px;
     color: #555;
+}
+body.dark .dropdown {
+  background-color: #333;
+  border: 1px solid #555;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .dropdown a {
+  color: #fff;
+  border-bottom-color: #555;
+}
+
+body.dark .dropdown a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
 }
 
 /* Highlight Cards */
@@ -496,11 +511,10 @@ nav {
 .nav-right {
   margin-right: 10rem;
 }
-/* Navigation Links */
+/* Navigation Links 
 .nav-links {
-  /* Removed to use style.css nav-links styles */
-}
-
+   Removed to use style.css nav-links styles */
+*/
 .nav-links li {
   display: flex;
   align-items: center;
