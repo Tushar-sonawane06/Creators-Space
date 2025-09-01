@@ -2,30 +2,154 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-} 
+}
 
 /* Responsive Design */
-@media (max-width: 768px) {
-  .nav-links {
+@media (max-width: 1050px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  .nav-menu {
     position: absolute;
-    top: 70px;
-    right: 0;
-    background: #6a5acd;
-    width: 200px;
+    top: 85px !important;
+    right: 10px !important;
+    width: max-content; /* only as wide as content */
+    width: 220px;
+    margin: 15px;
     flex-direction: column;
     gap: 1rem;
-    padding: 1rem;
-    border-radius: 0 0 10px 10px;
-    display: none;
-  }
+    padding: 1rem 1rem;
+    border-radius: 10px;
+    display: none !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
-  .nav-links.active {
+    max-height: 0; /* Start closed */
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease; /* Smooth transition */
+    border-radius: 10px;
+  }
+  .nav-item {
+    border-radius: 12px;
+    background: #070707;
+    width: 130px;
+    white-space: nowrap;
+    padding: 0.8rem 1.2rem;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+  .nav-item a {
+    color: #fff !important;
+  }
+  .dropdown a {
+    color: #000 !important;
+  }
+  #authSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+  }
+  #authSection .btn {
+    border-radius: 10px;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  #authSection .btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    color: #000;
+  }
+  #authSection .signup {
+    box-shadow: 0 5px 12px #030303;
+  }
+  #authSection .login {
+    background: #fff;
+    box-shadow: 0 4px 12px #020202;
+  }
+  body.dark .dropdown {
+  background-color: #333;
+  border: 1px solid #555;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .dropdown a {
+  color: #fff;
+  border-bottom-color: #555;
+}
+
+body.dark .dropdown a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+  .nav-menu.active {
+    display: flex !important;
+    max-height: 500px;
+    opacity: 1;
+    transform: translateY(0px);
   }
 
   .hamburger {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 2000;
+    margin-right: 2rem;
   }
+  .hamburger.open {
+    transform: rotate(90deg);
+    transition: transform var(--animation-normal) var(--easing-standard);
+  }
+
+  .hamburger {
+    transition: transform var(--animation-normal) var(--easing-standard);
+  }
+}
+/* Desktop - hide hamburger */
+@media (min-width: 1051px) {
+  .hamburger {
+    display: none; 
+  }
+  #authSection {
+    display: flex;
+  }
+  .signup {
+    margin-top: 1rem;
+  }
+  .nav-menu {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    gap: 20px;
+    background: none;
+    box-shadow: none;
+    margin: 0 2rem;
+  }
+}
+.dropdown a {
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+.dropdown a:hover {
+  border-radius: 13px;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(106, 90, 205, 0.8);
 }
 
 /* enroll section */
