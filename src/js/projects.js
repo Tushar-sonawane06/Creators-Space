@@ -266,19 +266,30 @@ if (toggleTechFilters && techStackFilters) {
       if (e.target.classList.contains('tech-filter')) {
         const tech = e.target.dataset.tech;
         
-        // Update active filter
-        filterContainer.querySelectorAll('.tech-filter').forEach(btn => {
-          btn.classList.remove('active');
-        });
-        e.target.classList.add('active');
-
-        // Filter projects
         if (tech === 'all') {
+          // Clear all filters and remove active class from all buttons
           this.activeFilters.clear();
-          
+          filterContainer.querySelectorAll('.tech-filter').forEach(btn => {
+            btn.classList.remove('active');
+          });
+          e.target.classList.add('active');
         } else {
-          this.activeFilters.clear();
-          this.activeFilters.add(tech);
+          // Remove active class from "All" button
+          filterContainer.querySelector('.tech-filter[data-tech="all"]').classList.remove('active');
+          
+          // Toggle the clicked filter
+          if (this.activeFilters.has(tech)) {
+            this.activeFilters.delete(tech);
+            e.target.classList.remove('active');
+          } else {
+            this.activeFilters.add(tech);
+            e.target.classList.add('active');
+          }
+          
+          // If no filters are selected, activate "All"
+          if (this.activeFilters.size === 0) {
+            filterContainer.querySelector('.tech-filter[data-tech="all"]').classList.add('active');
+          }
         }
         
         this.filterProjects();
@@ -295,9 +306,11 @@ if (toggleTechFilters && techStackFilters) {
         project.admin.toLowerCase().includes(this.searchQuery) ||
         project.techStack.some(tech => tech.toLowerCase().includes(this.searchQuery));
 
-      // Tech stack filter
+      // Tech stack filter (AND logic - project must have ALL selected technologies)
       const matchesTechStack = this.activeFilters.size === 0 ||
-        project.techStack.some(tech => this.activeFilters.has(tech));
+        Array.from(this.activeFilters).every(selectedTech => 
+          project.techStack.includes(selectedTech)
+        );
 
       return matchesSearch && matchesTechStack;
     });
@@ -442,4 +455,4 @@ if (toggleTechFilters && techStackFilters) {
 // Initialize the projects manager when the DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   new ProjectsManager();
-}); 
+});
