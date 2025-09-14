@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz | Creators-Space</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #e3f2fd, #f9f9fc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Quiz card */
+.quiz-box {
+  width: 90%;
+  max-width: 650px;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden; /* for header bar */
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: fadeIn 0.6s ease;
+}
+
+/* Gradient header */
+.quiz-box h1 {
+  font-size: 26px;
+  margin: 0;
+  padding: 18px;
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  color: #fff;
+  font-weight: 600;
+  border-bottom: 2px solid #f1f1f1;
+}
+
+/* Question text */
+.quiz-box h2 {
+  font-size: 20px;
+  margin: 25px 0 15px;
+  color: #333;
+}
+
+/* Options */
+#options {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 20px;
+}
+
+#options button {
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #fdfdfd;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.25s ease;
+}
+
+#options button:hover {
+  background: #007bff;
+  color: #fff;
+  border-color: #007bff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+/* Next button */
+#next-btn {
+  padding: 12px 28px;
+  background: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 500;
+  transition: background 0.3s, transform 0.2s;
+  display: none;
+  margin: 15px auto 25px;
+}
+
+#next-btn:hover {
+  background: #1e7e34;
+  transform: scale(1.05);
+}
+
+/* Score / results */
+#score {
+  margin: 20px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #444;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- ✅ Centered Quiz Box -->
+  <div class="quiz-box">
+    <h1>Interactive Quiz</h1>
+    <h2 id="question"></h2>
+    <div id="options"></div>
+    <button id="next-btn">Next</button>
+    <p id="score"></p>
+  </div>
+
+  <!-- ✅ Quiz Script -->
+  <script>
+     const questions = [
+      { question: "Which language runs in a web browser?", options: ["Java", "C", "Python", "JavaScript"], answer: "JavaScript" },
+      { question: "What does CSS stand for?", options: ["Cascading Style Sheets", "Creative Style System", "Computer Style Sheet", "Colorful Style Syntax"], answer: "Cascading Style Sheets" },
+      { question: "Which HTML tag is used to define JavaScript?", options: ["<js>", "<javascript>", "<script>", "<code>"], answer: "<script>" },
+      { question: "Which company developed Java?", options: ["Microsoft", "Sun Microsystems", "Google", "Oracle"], answer: "Sun Microsystems" },
+      { question: "Which symbol is used for comments in JavaScript?", options: ["//", "/* */", "#", "<!-- -->"], answer: "//" },
+      { question: "Which of the following is NOT a programming language?", options: ["Python", "Ruby", "HTML", "C++"], answer: "HTML" },
+      { question: "What does HTML stand for?", options: ["HyperText Markup Language", "HighText Machine Language", "HyperTool Markup Language", "Hyper Transfer Markup Language"], answer: "HyperText Markup Language" },
+      { question: "Inside which HTML element do we put the CSS?", options: ["<css>", "<script>", "<style>", "<design>"], answer: "<style>" },
+      { question: "Which property is used to change text color in CSS?", options: ["font-color", "text-color", "color", "fgcolor"], answer: "color" },
+      { question: "Which HTML attribute is used to provide a unique identifier?", options: ["class", "id", "name", "unique"], answer: "id" },
+      { question: "Which keyword is used to declare a constant in JavaScript?", options: ["var", "let", "const", "constant"], answer: "const" },
+      { question: "Which of these is a JavaScript framework?", options: ["Django", "React", "Laravel", "Flask"], answer: "React" },
+      { question: "Which CSS property controls the text size?", options: ["font-style", "text-size", "font-size", "size"], answer: "font-size" },
+      { question: "Which HTML element is used to display a picture?", options: ["<picture>", "<image>", "<img>", "<src>"], answer: "<img>" },
+      { question: "Which operator is used to assign a value in JavaScript?", options: ["-", "=", "==", "==="], answer: "=" }
+    ];
+
+    let current = 0;
+    let score = 0;
+    let answered = false;
+
+    const questionEl = document.getElementById("question");
+    const optionsEl = document.getElementById("options");
+    const scoreEl = document.getElementById("score");
+    const nextBtn = document.getElementById("next-btn");
+
+    function loadQuestion() {
+      answered = false;
+      let q = questions[current];
+      questionEl.textContent = q.question;
+      optionsEl.innerHTML = "";
+      q.options.forEach(opt => {
+        const btn = document.createElement("button");
+        btn.textContent = opt;
+        btn.onclick = () => checkAnswer(opt, btn);
+        optionsEl.appendChild(btn);
+      });
+      nextBtn.style.display = "none";
+      scoreEl.textContent = `Score: ${score}`;
+    }
+
+    function checkAnswer(selected, btn) {
+      if (answered) return; // prevent multiple answers
+      answered = true;
+
+      if (selected === questions[current].answer) {
+        score++;
+        btn.style.background = "#28a745";
+        btn.style.color = "#fff";
+      } else {
+        btn.style.background = "#dc3545";
+        btn.style.color = "#fff";
+
+        // highlight correct answer
+        Array.from(optionsEl.children).forEach(b => {
+          if (b.textContent === questions[current].answer) {
+            b.style.background = "#28a745";
+            b.style.color = "#fff";
+          }
+        });
+      }
+      nextBtn.style.display = "inline-block";
+      scoreEl.textContent = `Score: ${score}`;
+    }
+
+    nextBtn.addEventListener("click", () => {
+      current++;
+      if (current < questions.length) {
+        loadQuestion();
+      } else {
+        questionEl.textContent = "🎉 Quiz Completed!";
+        optionsEl.innerHTML = "";
+        nextBtn.style.display = "none";
+        scoreEl.textContent = `Final Score: ${score} / ${questions.length}`;
+      }
+    });
+
+    loadQuestion();
+  </script>
+
+</body>
+</html>
