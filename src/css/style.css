@@ -272,6 +272,7 @@ body.dark-mode #darkModeToggle .fa-sun {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
   flex-direction: column; /* stack like list */
   z-index: auto;
+  max-height: none;
   line-height: 1.2;
   gap : 2px;
   margin : 0px;
