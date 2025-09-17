@@ -48,3 +48,227 @@
 .bot-message, .user-message {
   margin: 5px 0;
 }
+
+/*  Toggle Buttons (Grid / Table) */
+.view-toggle-container button {
+  background: #fff;
+  color: #007bff;
+  border: 2px solid #007bff;
+}
+
+.view-toggle button:hover {
+  background: #007bff;
+  color: #fff;
+}
+
+.view-toggle button.active {
+  background: #0056cc;
+  color: #fff;
+}
+
+/*  Action Buttons (More Info / Compare Selected) */
+.info-btn,
+#compareBtn,
+.view-toggle-container button {
+  background: #ff4b2b;
+  color: #fff;
+  border: 2px solid #ff4b2b;
+}
+
+.info-btn:hover,
+#compareBtn:hover,
+.view-toggle-container button {
+  background: #e04326;
+  border-color: #e04326;
+}
+
+/*  Table Styling */
+#coursesTable {
+  width: 95%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+#coursesTable th,
+#coursesTable td {
+  padding: 14px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+#coursesTable th {
+  background: #007bff;
+  color: white;
+  font-size: 15px;
+}
+
+#coursesTable tr:hover {
+  background: #f9f9f9;
+}
+/* Enhanced Table Styling for #coursesTable and #comparePanel table */
+#coursesTable, #comparePanel table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  font-size: 14px;
+}
+#coursesTable th, #coursesTable td,
+#comparePanel th, #comparePanel td {
+  padding: 14px;
+  text-align: center;
+  border: 1px solid #eee;
+  vertical-align: middle;
+}
+#coursesTable th, #comparePanel th {
+  background: #007bff;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+}
+#coursesTable tr:nth-child(even), #comparePanel tr:nth-child(even) {
+  background: #f9f9f9;
+}
+#coursesTable tr:hover, #comparePanel tr:hover {
+  background: #f0f8ff;
+  transition: background 0.3s ease;
+}
+#coursesTable input[type="checkbox"], #comparePanel input[type="checkbox"] {
+  margin: 0;
+  accent-color: #007bff;
+}
+#coursesTable .compare-label, #comparePanel .compare-label {
+  margin: 0;
+}
+
+/* Compare Panel Styling */
+#comparePanel {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 800px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  animation: fadeIn 0.3s ease-in-out;
+}
+.hidden {
+  display: none;
+}
+#comparePanel h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #333;
+}
+#compareTableBody td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+/* Subtle animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.courses-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.compare-container {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.compare-container label {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.compare-container input {
+  margin-right: 5px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+/*hide raw checkbox*/
+.compare-label input{
+  display:none;
+}
+/* Compare Checkbox as Button */
+.compare-label {
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  padding: 8px 14px;
+  border: 2px solid #ff4b2b;
+  background: #ff4b2b;
+  color: #fff;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+.compare-label:hover {
+  background: #e04326;
+  border-color: #e04326;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.compare-label input {
+  display: none;
+}
+.compare-label span {
+  position: relative;
+  z-index: 1;
+}
+.compare-label input:checked + span {
+  background: #007bff;
+  border-color: #007bff;
+}
+.compare-label input:checked + span::after {
+  content: ' ✓';
+  color: white;
+  font-weight: bold;
+}
+.compare-controls {
+  margin-top: 15px;
+  text-align: center;
+}
+#compareBtn {
+  padding: 8px 16px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#compareBtn:hover {
+  background: #0056b3;
+}
+
+
+
+
+
+
+
