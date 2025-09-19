@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
-      <!-- Navbar -->harset="UTF-8" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Internships | Creators-Space</title>
  <link rel="stylesheet" href="./src/css/courses.css">
@@ -103,13 +101,15 @@
   </section>
 
   <!--Search Bar-->
-
-<div style="display:flex; width:100%; position:relative; left:250px">
-  <form id="searchbar">
-    <button id="searchBtn" style="background-color: white; border: none;">🔍</button>
-<input type="search" placeholder=" Search for Internships." id="searchinput" style="width:1000px; height:50px; border-radius:5%">
-
-</form>
+<div class="search-container">
+  <form id="searchbar" class="search-form">
+    <div class="search-input-wrapper">
+      <input type="search" placeholder="Search for Internships..." id="searchinput" class="search-input">
+      <button type="submit" id="searchBtn" class="search-button">
+        <i class="fa-solid fa-search"></i>
+      </button>
+    </div>
+  </form>
 </div>
 
   <!-- INTERNSHIP CARDS -->
