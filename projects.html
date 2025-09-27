@@ -200,7 +200,97 @@ a:active {
   color: #9370DB;
   transform: scale(0.98);
 }
+  .resource-hub {
+    margin: 30px auto;
+    padding: 20px;
+    max-width: 900px;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    background: #f9f9f9;
+  }
 
+  .resource-hub h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .resource-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .resource-input input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  .resource-input button {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    background: #9370db;
+    color: white;
+    border: none;
+    transition: background 0.3s ease;
+  }
+
+  .resource-input button:hover {
+    background: #7a52c4;
+  }
+
+  .resources-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .resource-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    width: calc(33% - 10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 150px;
+  }
+
+  .resource-card .text-content {
+    flex: 1;
+    text-align: justify;
+    margin-bottom: 10px;
+  }
+
+  .resource-card button {
+    align-self: flex-end;
+    background: #e63946;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: background 0.3s ease;
+  }
+
+  .resource-card button:hover {
+    background: #c12c3b;
+  }
+
+  @media (max-width: 768px) {
+    .resource-card {
+      width: calc(50% - 10px);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .resource-card {
+      width: 100%;
+    }
+  }
 
 </style>
 
@@ -526,6 +616,24 @@ a:active {
       </svg>
     </button>
 
+    <!-- Resource Sharing Hub -->
+<section class="resource-hub">
+  <h2>Resource Sharing Hub</h2>
+  <p>Add and explore resources shared by creators.</p>
+
+  <div class="resource-input">
+    <input type="text" id="resourceName" placeholder="Enter resource name or link" />
+    <button id="addResourceBtn">Add Resource</button>
+  </div>
+
+  <div class="resource-search">
+    <input type="text" id="resourceSearch" placeholder="Search resources..." />
+  </div>
+
+  <div class="resources-container" id="resourcesContainer"></div>
+</section>
+
+
     <!-- Footer -->
     <footer class="footer">
       <div class="social">
@@ -775,6 +883,56 @@ observer.observe(document.getElementById("projectsContainer"), {
   childList: true,
   subtree: true,
 });
+
+// Resource Sharing Hub Logic
+const resourceInput = document.getElementById("resourceName");
+const addResourceBtn = document.getElementById("addResourceBtn");
+const resourcesContainer = document.getElementById("resourcesContainer");
+const resourceSearch = document.getElementById("resourceSearch");
+
+let resources = JSON.parse(localStorage.getItem("resources")) || [];
+
+// Function to render resources
+function renderResources(filter = "") {
+  resourcesContainer.innerHTML = "";
+  resources
+    .filter(r => r.toLowerCase().includes(filter.toLowerCase()))
+    .forEach((r, index) => {
+      const card = document.createElement("div");
+      card.className = "resource-card";
+      card.innerHTML = `
+        <span>${r}</span>
+        <button onclick="deleteResource(${index})">Delete</button>
+      `;
+      resourcesContainer.appendChild(card);
+    });
+}
+
+// Add resource
+addResourceBtn.addEventListener("click", () => {
+  const val = resourceInput.value.trim();
+  if (!val) return;
+  resources.push(val);
+  localStorage.setItem("resources", JSON.stringify(resources));
+  resourceInput.value = "";
+  renderResources();
+});
+
+// Delete resource
+function deleteResource(index) {
+  resources.splice(index, 1);
+  localStorage.setItem("resources", JSON.stringify(resources));
+  renderResources(resourceSearch.value);
+}
+
+// Search
+resourceSearch.addEventListener("input", () => {
+  renderResources(resourceSearch.value);
+});
+
+// Initial render
+renderResources();
+
 
     </script>
   </body>
