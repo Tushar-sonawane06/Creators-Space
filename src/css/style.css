@@ -354,23 +354,55 @@ body.dark-mode #darkModeToggle .fa-sun {
   transition: transform 0.3s ease;
 }
 
-/* ================= DARK MODE DROPDOWN ================= */
+/* Dark Mode Dropdown - No Scrollbar Version */
 body.dark-mode .dropdown {
-  background-color: #1e1e1e;
+  background-color: #1f1f1f;
   border: 1px solid #333;
+  border-radius: 8px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  padding: 5px 0;
+  min-width: 180px;
+  overflow: hidden; /* prevents overflow */
+  transition: all 0.3s ease;
 }
 
 body.dark-mode .dropdown a {
   color: #f0f0f0;
+  padding: 10px 16px;
+  display: block;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  position: relative; /* allows pseudo-element for hover effect */
+}
+
+/* Hover effect without increasing width */
+body.dark-mode .dropdown a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;           /* small indicator on hover */
+  height: 100%;
+  background-color: white; /* gold indicator */
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  border-radius: 4px 0 0 4px;
+}
+
+body.dark-mode .dropdown a:hover::before {
+  opacity: 1; /* show indicator without expanding the link */
 }
 
 body.dark-mode .dropdown a:hover {
-  background-color: #333;
-  color: #fff;
-  padding-left: 20px; /* preserve hover effect */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7) !important;
+  background-color: #2a2a2a;
+  color: white;
+  box-shadow: inset 0 0 8px rgba(255, 215, 0, 0.2);
+  padding-left: 16px; /* same as normal, no increase */
 }
+
+
 
 /* ========== Mobile view ========== */
 @media (max-width: 768px) {
