@@ -38,7 +38,7 @@ body {
 .navbar a {
   color: black;
   text-decoration: none;
-  margin: 10px 2px;
+  margin: 5px 2px;
   transition: color 0.3s;
   display: flex;
   position: relative;
