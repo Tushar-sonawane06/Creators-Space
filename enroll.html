@@ -350,6 +350,11 @@
           // Pre-select the course
           courseSelect.value = selectedCourse;
           
+          // Disable the dropdown so user can see but not change the selection
+          courseSelect.disabled = true;
+          courseSelect.style.backgroundColor = '#f8f9fa';
+          courseSelect.style.cursor = 'not-allowed';
+          
           // Show course information
           courseName.textContent = selectedCourse;
           courseDesc.textContent = courseDescriptions[selectedCourse] || '';
