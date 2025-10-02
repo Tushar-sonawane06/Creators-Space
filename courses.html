@@ -524,6 +524,28 @@
         });
       });
     </script>
+
+    <script>
+      // Handle Enroll Now buttons
+      document.querySelectorAll('.button').forEach((btn, index) => {
+        if (btn.textContent.trim() === 'Enroll Now') {
+          btn.addEventListener('click', function() {
+            const courseNames = [
+              'web-development',
+              'c-programming', 
+              'python-programming',
+              'ui-ux-design',
+              'graphic-design',
+              'data-analytics'
+            ];
+            
+            const courseParam = courseNames[index] || 'general';
+            window.location.href = `./enroll.html?course=${courseParam}`;
+          });
+        }
+      });
+    </script>
+
     <script src="./src/js/auth.js"></script>
     <script src="script.js" defer></script>
 
