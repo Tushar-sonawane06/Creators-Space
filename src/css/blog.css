@@ -67,6 +67,7 @@ body.dark .dropdown a:hover {
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height:60vh;
 }
 
 .blog-card:hover {
@@ -186,3 +187,185 @@ body.dark .navbar .btn.login:hover,
 body.dark .navbar .btn.signup:hover {
   background-color: #444;
 }
+
+
+
+.blog-title,
+.blog-excerpt {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+.blog-title {
+  -webkit-line-clamp: 2;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.blog-excerpt {
+  -webkit-line-clamp: 3;
+  color: #555;
+  font-size: 0.95rem;
+  margin-top: 5px;
+}
+
+/* Style for the Read More/Less button */
+.read-more-btn {
+  display: inline-block;
+  margin-top: 6px;
+  color: #0077cc;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0;
+}
+
+.read-more-btn:hover {
+  text-decoration: underline;
+}
+
+.blog-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Blog Card Styling */
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.blog-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Thumbnail */
+.blog-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Blog Content */
+.blog-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1.2rem;
+  min-height: 220px; /* Ensures consistent height */
+}
+
+/* Category Badge */
+.blog-category {
+  /* width:50px; */
+  background: #007BFF;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.8rem;
+  border-radius: 12px;
+  padding: 3px 10px;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+/* Title */
+.blog-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.4rem;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* only 2 lines visible */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height:50px;
+}
+
+/* Meta Info */
+.blog-meta {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 0.8rem;
+}
+
+/* Excerpt (3 lines max visible) */
+.blog-excerpt {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0.8rem;
+  flex-grow: 1;
+}
+
+/* Read More Button */
+.read-more-btn {
+  color: #007BFF;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.9rem;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.read-more-btn:hover {
+  text-decoration: underline;
+}
+
+/* Interaction Box */
+.interaction-box {
+  border-top: 1px solid #eee;
+  padding: 1rem;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  height:20vh;
+}
+
+.like-btn, .comment-btn {
+  background: rgb(245, 239, 239);
+  /* color: white; */
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.like-btn:hover, .comment-btn:hover {
+  background: #0056b3;
+  color:white;
+}
+
+.comment-section textarea {
+  width: 100%;
+  margin-top: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  resize: none;
+}
+

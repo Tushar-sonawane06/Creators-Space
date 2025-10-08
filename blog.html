@@ -264,9 +264,9 @@
       <img src="assets/images/blogpage/techstartup.jpeg" alt="Blog thumbnail" />
       <div class="blog-content">
         <span class="blog-category">StartUp</span>
-        <div class="blog-title">How to Launch Your Tech Startup</div>
+        <div class="blog-title">How to Launch Your Tech Startup in distinct countries as we have more countries</div>
         <div class="blog-meta">By Raghav | March 15, 2025</div>
-        <div class="blog-excerpt">Step-by-step guide to launching your startup — from ideation to product-market fit and fundraising.</div>
+        <div class="blog-excerpt">Step-by-step guide to launching your startup — from ideation to product-market fit and fundraising. Step-by-step guide to launching your startup — from ideation to product-market fit and fundraising.</div>
       </div>
       <div class="interaction-box">
         <button class="like-btn">🤍 Like (<span class="like-count">0</span>)</button>
@@ -514,6 +514,72 @@
   });
 
   renderResources();
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  const limitLines = {
+    "blog-title": 2,
+    "blog-excerpt": 3
+  };
+
+  document.querySelectorAll(".blog-title, .blog-excerpt").forEach(el => {
+    const lineClamp = parseInt(getComputedStyle(el).getPropertyValue("-webkit-line-clamp"));
+    const fullText = el.textContent.trim();
+
+    // Clone element to measure text height
+    const clone = el.cloneNode(true);
+    clone.style.display = "block";
+    clone.style.position = "absolute";
+    clone.style.visibility = "hidden";
+    clone.style.webkitLineClamp = "unset";
+    clone.style.maxHeight = "none";
+    document.body.appendChild(clone);
+
+    const isOverflowing = clone.scrollHeight > el.clientHeight;
+    document.body.removeChild(clone);
+
+    if (isOverflowing) {
+      const btn = document.createElement("button");
+      btn.textContent = "Read more ↓";
+      btn.classList.add("read-more-btn");
+
+      btn.addEventListener("click", () => {
+        const expanded = el.classList.toggle("expanded");
+
+        if (expanded) {
+          el.style.webkitLineClamp = "unset";
+          el.style.overflow = "visible";
+          btn.textContent = "Read less ↑";
+        } else {
+          el.style.webkitLineClamp = limitLines[el.classList.contains("blog-title") ? "blog-title" : "blog-excerpt"];
+          el.style.overflow = "hidden";
+          btn.textContent = "Read more ↓";
+        }
+      });
+
+      el.insertAdjacentElement("afterend", btn);
+    }
+  });
+});
+
+document.querySelectorAll('.blog-card').forEach(card => {
+  const excerpt = card.querySelector('.blog-excerpt');
+  if (!excerpt) return;
+
+  const btn = document.createElement('button');
+  btn.className = 'read-more-btn';
+  btn.textContent = 'Read more';
+  excerpt.after(btn);
+
+  btn.addEventListener('click', () => {
+    const expanded = btn.textContent === 'Read less';
+    excerpt.style['-webkit-line-clamp'] = expanded ? 3 : 'unset';
+    btn.textContent = expanded ? 'Read more' : 'Read less';
+  });
+});
+
+
 </script>
 
 </body>
