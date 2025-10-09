@@ -22,8 +22,6 @@ body.dark .footer {
   color: #ccc;
 }
 
-
-
 #blog-search {
   padding: 10px 15px;
   width: 300px;
@@ -32,21 +30,7 @@ body.dark .footer {
   font-size: 1rem;
   transition: border-color 0.3s ease;
 }
-body.dark .dropdown {
-  background-color: #333;
-  border: 1px solid #555;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-}
-
-body.dark .dropdown a {
-  color: #fff;
-  border-bottom-color: #555;
-}
-
-body.dark .dropdown a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #fff;
-}
+/* Duplicate dropdown styles removed - handled in style.css */
 
 #blog-search:focus {
   outline: none;
@@ -188,184 +172,199 @@ body.dark .navbar .btn.signup:hover {
   background-color: #444;
 }
 
-
-
-.blog-title,
-.blog-excerpt {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  text-overflow: ellipsis;
-}
-
-.blog-title {
-  -webkit-line-clamp: 2;
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-.blog-excerpt {
-  -webkit-line-clamp: 3;
-  color: #555;
-  font-size: 0.95rem;
-  margin-top: 5px;
-}
-
-/* Style for the Read More/Less button */
-.read-more-btn {
-  display: inline-block;
-  margin-top: 6px;
-  color: #0077cc;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 0.9rem;
-  padding: 0;
-}
-
-.read-more-btn:hover {
-  text-decoration: underline;
-}
-
-.blog-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-}
-
-/* Blog Card Styling */
-.blog-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 100%;
-}
-
-.blog-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-}
-
-/* Thumbnail */
-.blog-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-/* Blog Content */
-.blog-content {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 1.2rem;
-  min-height: 220px; /* Ensures consistent height */
-}
-
-/* Category Badge */
-.blog-category {
-  /* width:50px; */
-  background: #007BFF;
-  color: #fff;
-  font-weight: 600;
-  font-size: 0.8rem;
-  border-radius: 12px;
-  padding: 3px 10px;
-  display: inline-block;
-  margin-bottom: 0.5rem;
-}
-
-/* Title */
-.blog-title {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #222;
-  margin-bottom: 0.4rem;
-  line-height: 1.4;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* only 2 lines visible */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  height:50px;
-}
-
-/* Meta Info */
-.blog-meta {
-  font-size: 0.85rem;
-  color: #777;
-  margin-bottom: 0.8rem;
-}
-
-/* Excerpt (3 lines max visible) */
-.blog-excerpt {
-  font-size: 0.95rem;
-  color: #555;
-  line-height: 1.5;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-bottom: 0.8rem;
-  flex-grow: 1;
-}
-
-/* Read More Button */
-.read-more-btn {
-  color: #007BFF;
-  background: none;
-  border: none;
-  padding: 0;
-  font-size: 0.9rem;
-  cursor: pointer;
-  align-self: flex-start;
-}
-
-.read-more-btn:hover {
-  text-decoration: underline;
-}
-
-/* Interaction Box */
+/* Blog interaction styles */
 .interaction-box {
-  border-top: 1px solid #eee;
-  padding: 1rem;
-  background: #fafafa;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  flex-shrink: 0;
-  height:20vh;
+  margin-top: 10px;
+  padding: 10px;
+  border-top: 1px solid #ddd;
 }
 
-.like-btn, .comment-btn {
-  background: rgb(245, 239, 239);
-  /* color: white; */
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
+.like-btn {
   cursor: pointer;
-  transition: background 0.3s ease;
+  background: none;
+  border: none;
+  font-size: 16px;
+  margin-bottom: 8px;
 }
 
-.like-btn:hover, .comment-btn:hover {
-  background: #0056b3;
-  color:white;
+.comment-section {
+  margin-top: 10px;
 }
 
 .comment-section textarea {
   width: 100%;
-  margin-top: 0.5rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  padding: 0.5rem;
-  resize: none;
+  padding: 6px;
+  margin-bottom: 6px;
+  box-sizing: border-box;
 }
 
+.comment {
+  background: #f0f0f0;
+  padding: 6px;
+  margin: 4px 0;
+  border-radius: 5px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment span {
+  flex: 1;
+}
+
+.comment-actions button {
+  margin-left: 5px;
+  padding: 2px 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+/* Resource Sharing Hub */
+.resource-hub {
+  margin: 30px auto;
+  padding: 20px;
+  max-width: 900px;
+  border: 2px solid #ddd;
+  border-radius: 15px;
+  background: #f9f9f9;
+}
+
+.resource-hub h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.resource-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.resource-input input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.resource-input button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background: #9370db;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.resource-input button:hover {
+  background: #7a52c4;
+}
+
+.resources-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.resource-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  width: calc(33% - 10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 150px;
+}
+
+.resource-card span {
+  text-align: justify;
+  flex: 1;
+}
+
+.resource-card button {
+  align-self: flex-end;
+  background: #e63946;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: background 0.3s ease;
+}
+
+.resource-card button:hover {
+  background: #c12c3b;
+}
+
+/* Dark mode for blog interactions and resources */
+body.dark .interaction-box {
+  border-top-color: #555;
+}
+
+body.dark .comment {
+  background: #333;
+  color: #fff;
+}
+
+body.dark .resource-hub {
+  background: #222;
+  border-color: #555;
+}
+
+body.dark .resource-hub h2 {
+  color: #fff;
+}
+
+body.dark .resource-input input {
+  background: #333;
+  color: #fff;
+  border-color: #555;
+}
+
+body.dark .resource-card {
+  background: #333;
+  color: #fff;
+}
+
+/* Resource responsive design */
+@media (max-width: 768px) {
+  .resource-card { 
+    width: calc(50% - 10px); 
+  }
+}
+
+@media (max-width: 480px) {
+  .resource-card { 
+    width: 100%; 
+  }
+}
+
+/* Utility classes */
+.user-section-hidden {
+  display: none;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-img {
+  border-radius: 50%;
+}
+
+.resource-search {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+body.dark .resource-search {
+  background: #333;
+  color: #fff;
+  border-color: #555;
+}
