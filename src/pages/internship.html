@@ -9,166 +9,41 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" 
     integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="./src/css/courses.css" />
-    <link rel="stylesheet" href="./src/css/style.css" />
-    <link rel="stylesheet" href="./src/css/utils.css" />
-    <link rel="stylesheet" href="./src/css/internship.css" />
-    <link rel="stylesheet" href="./src/css/responsive.css" />
+  <link rel="stylesheet" href="/src/css/courses.css" />
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <link rel="stylesheet" href="/src/css/utils.css" />
+    <link rel="stylesheet" href="/src/css/internship.css" />
+    <link rel="stylesheet" href="/src/css/responsive.css" />
 </head>
 
 <body>
-<!-- Navbar -->
-    <div class="navbar">
-      <h1>
-        <a href="./">
-          <img
-            id="navbar-logo"
-            width="80px"
-            src="./assets/images/logo-nav-light.png"
-            alt="logo Creators-Space"
-          />
-          <br />Creators-Space</a
-        >
-      </h1>
-      <div class="nav-links align-items-center">
-        <a href="index.html" data-translate="navbar.home">Home</a>
+  <div id="navbar"></div>
 
-        <!-- dropDown 1 - About → About Us, Campus Ambassador-->
-        <li class="nav-item">
-          <a href="#" class="dropdown-toggle"
-            ><span data-translate="navbar.about">About</span>
-            <i class="fa-solid fa-chevron-down arrow"></i
-          ></a>
-          <div class="dropdown">
-            <a href="about.html" data-translate="navbar.aboutUs">About Us</a>
-            <a
-              href="campus-ambassador.html"
-              data-translate="navbar.campusAmbassador"
-              >Campus Ambassador</a
-            >
-          </div>
-        </li>
-        <!--dropDown 2 - Programs → Courses, Internship, Services -->
-        <li class="nav-item">
-          <a href="#" class="dropdown-toggle"
-            ><span data-translate="navbar.programs">Programs</span>
-            <i class="fa-solid fa-chevron-down arrow"></i
-          ></a>
-          <div class="dropdown">
-            <a href="courses.html" data-translate="navbar.courses">Courses</a>
-            <a href="internship.html" data-translate="navbar.internship"
-              >Internship</a
-            >
-            <a href="services.html" data-translate="navbar.services"
-              >Services</a
-            >
-            <a href="freelancing.html" data-translate="navbar.freelance"
-              >Freelance</a
-            >
-          </div>
-        </li>
-        <!--dropDown 3 - Resources → Blog, Bookmarks, Certificates  -->
-        <li class="nav-item">
-          <a href="#" class="dropdown-toggle"
-            ><span data-translate="navbar.resources">Resources</span>
-            <i class="fa-solid fa-chevron-down arrow"></i
-          ></a>
-          <div class="dropdown">
-            <a href="blog.html" data-translate="navbar.blog">Blog</a>
-            <a href="bookmarked.html" data-translate="navbar.bookmarks"
-              >BookMarks</a
-            >
-            <a href="./certificate/" data-translate="navbar.certificates"
-              >Certificates</a
-            >
-            <a href="quiz.html">Quiz</a>
-          </div>
-        </li>
-        <a href="projects.html" data-translate="navbar.projects">Projects</a>
-        <a href="contact.html" data-translate="navbar.contact">Contact</a>
-        <!-- Navbar -->
-        <div id="authSection">
-          <a href="./login.html" class="btn login" data-translate="navbar.login"
-            >Log In</a
-          >
-          <a
-            href="./signup.html"
-            class="btn signup"
-            data-translate="navbar.signup"
-            >Sign Up</a
-          >
-        </div>
-
-        <div
-          id="userSection"
-          style="display: none; align-items: center; gap: 10px"
-        >
-          <button
-            id="logoutBtn"
-            class="btn login"
-            data-translate="navbar.logout"
-          >
-            Logout
-          </button>
-          <a href="profile.html" title="Your Profile">
-            <img
-              id="profileImg"
-              src="https://cdn-icons-png.flaticon.com/512/847/847969.png"
-              alt="Profile"
-              width="30"
-              style="border-radius: 50%"
-            />
-          </a>
-        </div>
-      </div>
-      <div
-        class="nav-toggle align-items-center justify-content-center"
-        onclick="toggleNav()"
-      >
-        <svg viewBox="0 0 18 18" id="navbar-barger-logo" class="">
-          <polyline
-            id="globalnav-menutrigger-bread-bottom"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            points="2 12, 16 12"
-            class="globalnav-menutrigger-bread globalnav-menutrigger-bread-bottom"
-          ></polyline>
-          <polyline
-            id="globalnav-menutrigger-bread-top"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            points="2 5, 16 5"
-            class="globalnav-menutrigger-bread globalnav-menutrigger-bread-top"
-          ></polyline>
-        </svg>
-
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="currentColor"
-          id="navbar-x-logo"
-          class="bi bi-x-lg d-none"
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
-          />
-        </svg>
-      </div>
-    </div>
-
-    <!-- Dark Mode Toggle -->
-    <div class="toggle-switch">
-      <label class="switch-label">
-        <input type="checkbox" class="checkbox" id="dark-mode-toggle" />
-        <span class="slider"></span>
-      </label>
-    </div>
+  <script>
+    // load shared navbar and initialize hooks
+    fetch('/navbar.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('navbar').innerHTML = html;
+        // initialize navbar-provided dark toggle if available
+        if (typeof initDarkModeToggle === 'function') {
+          try { initDarkModeToggle(); } catch (e) { /* ignore */ }
+        }
+        // initialize language selector if the manager exists
+        if (window.getLanguageManager) {
+          try { window.getLanguageManager().initLanguageSelector(); } catch (e) { }
+        }
+        // sync navbar logo with current theme
+        const navbarLogo = document.getElementById('navbar-logo');
+        if (navbarLogo) {
+          if (document.body.classList.contains('dark') || document.body.classList.contains('dark-mode')) {
+            navbarLogo.src = '/assets/images/logo-nav-dark.png';
+          } else {
+            navbarLogo.src = '/assets/images/logo-nav-light.png';
+          }
+        }
+      }).catch(() => {/* ignore fetch errors during dev */});
+  </script>
   <!-- Hero -->
   <section class="internship-hero">
     <div class="internship-hero-content">
@@ -195,7 +70,7 @@
       <!-- footer-left -->
       <div class="footer-left">
         <div class="social">
-          <h1><img width="80px" src="./assets/images/logo.png" alt="logo Anurag Vishwakarma's Creators-Space">
+          <h1><img width="80px" src="/assets/images/logo.png" alt="logo Anurag Vishwakarma's Creators-Space">
             <br>Creators-Space
           </h1>
           <h3>Social Media</h3>
@@ -394,9 +269,9 @@
 
         // Change navbar logo based on theme
         if (body.classList.contains("dark")) {
-          navbarLogo.src = "./assets/images/logo-nav-dark.png"; // Dark mode logo
+          navbarLogo.src = "/assets/images/logo-nav-dark.png"; // Dark mode logo
         } else {
-          navbarLogo.src = "./assets/images/logo-nav-light.png"; // Light mode logo
+          navbarLogo.src = "/assets/images/logo-nav-light.png"; // Light mode logo
         }
       });
   </script>

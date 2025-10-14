@@ -8,14 +8,14 @@
       name="description"
       content="A dark, responsive, animated guide to top freelance platforms with direct links, categorized for Beginner, Intermediate, and Advanced users."
     />
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="./src/css/utils.css" />
-    <link rel="stylesheet" href="./src/css/style.css" />
-    <link rel="stylesheet" href="./src/css/responsive.css" />
-    <link rel="stylesheet" href="./src/css/newsletter-demo.css" />
-    <link rel="stylesheet" href="./src/css/freelancing.css" />
+    <link rel="stylesheet" href="/src/css/utils.css" />
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <link rel="stylesheet" href="/src/css/responsive.css" />
+    <link rel="stylesheet" href="/src/css/newsletter-demo.css" />
+    <link rel="stylesheet" href="/src/css/freelancing.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
@@ -60,7 +60,7 @@
       }
 
       // Initialize after navbar loads
-      fetch("navbar.html")
+      fetch("/navbar.html")
         .then((res) => res.text())
         .then((data) => {
           document.getElementById("navbar").innerHTML = data;
@@ -154,7 +154,7 @@
       <!-- footer-left -->
       <div class="footer-left">
         <div class="social">
-          <h1><img width="80px" src="./assets/images/logo.png" alt="logo Anurag Vishwakarma's Creators-Space">
+          <h1><img width="80px" src="/assets/images/logo.png" alt="logo Anurag Vishwakarma's Creators-Space">
             <br>Creators-Space
           </h1>
           <h3>Social Media</h3>
@@ -503,7 +503,7 @@
         }
       });
     </script> 
-    <script src="./src/js/language.js"></script> 
-    <script src="./src/js/navbar.js"></script>
+    <script src="/src/js/language.js"></script> 
+    <script src="/src/js/navbar.js"></script>
   </body>
 </html>
